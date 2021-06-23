@@ -17,14 +17,25 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
 
 });
 
-// const btnBuscar = document.getElementById('btnBuscar');
+const btnBuscar = document.getElementById('btnBuscar');
 
-// btnBuscar.addEventListener('click', function ingresarPokemon()
-// {
-       
-//   const numero = document.getElementById('txtBuscar').value;
-//   document.getElementById('pokemon').innerHTML = datos(numero);
-// });
+btnBuscar.addEventListener('click', function ingresarPokemon()
+{       
+  const nombrePokemon = document.getElementById('txtBuscar').value;
+  let opciones='';
+  for (let i = 0; i < data.pokemon.length; i++) {
+    if (data.pokemon[i].name == nombrePokemon) {
+      
+      opciones += '<div class = "cards"';
+      opciones += `<p> ${data.pokemon[i].name}<p>`;
+      opciones += `<img src = ${data.pokemon[i].img} />`;
+      opciones += '</div>';
+
+      document.getElementById('container').innerHTML = opciones;
+    }    
+  }
+  
+});
 
 let opciones='';
 
@@ -43,3 +54,23 @@ console.log(data.pokemon.length);
 document.getElementById('container').innerHTML = opciones;
 
 
+const btnFiltrar = document.getElementById('btnFiltrar');
+
+btnFiltrar.addEventListener('click', function filtrarPokemon()
+{       
+  
+  let opciones='';
+  for (let i = 0; i < data.pokemon.length; i++) {
+    if (data.pokemon[i].type == 'grass') {
+      
+      opciones += '<div class = "cards"';
+      opciones += `<p> ${data.pokemon[i].name}<p>`;
+      opciones += `<p> ${data.pokemon[i].type}<p>`;
+      opciones += `<img src = ${data.pokemon[i].img} />`;
+      opciones += '</div>';
+
+      document.getElementById('container').innerHTML = opciones;
+    }    
+  }
+  
+});
