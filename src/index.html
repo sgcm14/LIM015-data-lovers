@@ -5,19 +5,47 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!--<div id="root"></div>-->  
-
+  <body>    
     
-    <section>
+    <section id = "inicio" class="box">
       <h1>POKEDEX INFO</h1>
       <img  src="imagenes/pokebola.jpeg"  /> 
       <p>Hola, ¿Cual es tu nombre? </p>
       <input type="text"  id="txtNombre" placeholder="Escribir nombre ....">
-      <button id="btnIngresar">Ingresar</button>
-      
+      <button id="btnIngresar">Ingresar</button>  
+    </section> 
 
-    </section>     
+    <section id ="principal" class="box oculto">
+      <header id ="msjBienvenida"></header>
+    <nav>
+        <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Ordenar</a>
+                <ul>
+                    <li><a href="">Ascendente</a></li>
+                    <li><a href="">Descendente</a></li>
+                </ul>
+            </li>
+            <li><a href="">Filtrar</a>
+                <ul>
+                    <li><a href="">Por tipo</a></li>
+                    <li><a href="">Mas fuerte</a></li>
+                    <li><a href="">Region</a></li>
+                </ul>
+            </li>
+            <li><a href="">Estadisticas</a></li>
+        </ul>
+    </nav>
+    <section id="container-pokemon">
+        <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon...">
+        <button id="btnBuscar">Buscar</button>        
+        <div id="container"></div>
+        
+    </section>      
+
+    </section>
+    
+    
 
     <script src="main.js" type="module"></script>
   </body>

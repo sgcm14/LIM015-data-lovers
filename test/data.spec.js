@@ -8,18 +8,17 @@ describe('main', () => {
     expect(typeof validarNombre).toBe('function');
   });
 
-  it('validar si es vacio', () => {
-    //expect(validarNombre("")).toBe('example');
+  it('validar si es vacio', () => { 
 
-      expect(() => validarNombre()).toThrow(TypeError);
-      expect(() => validarNombre(0)).toThrow(TypeError);
-      expect(() => validarNombre(null)).toThrow(TypeError);
+    expect(() => validarNombre()).toThrow(TypeError);
+    expect(() => validarNombre(0)).toThrow(TypeError);
+    expect(() => validarNombre(null)).toThrow(TypeError);
       
   });
 
-  it('ingreso dato correcto', () => {    
-    expect(validarNombre("a")).toEqual("a");
-  });
+  // it('ingreso dato correcto', () => {    
+  //   expect(validarNombre("a")).toEqual("a");
+  // });
 });
 
 
