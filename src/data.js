@@ -37,7 +37,7 @@ export const validarNombre = (nombre) => {
 
 export const bienvenida =(nombre) => { 
   const mensaje = `¡Bienvenida ${nombre}!`;
-  document.getElementById('msjBienvenida').innerHTML = mensaje;  
+  document.getElementById('msjBienvenida').innerText = mensaje;  
 };
 
 

@@ -16,9 +16,9 @@ describe('main', () => {
       
   });
 
-  // it('ingreso dato correcto', () => {    
-  //   expect(validarNombre("a")).toEqual("a");
-  // });
+//   it('ingreso dato correcto', () => {    
+//     expect(validarNombre('a')).toEqual('a');
+//   });
 });
 
 
