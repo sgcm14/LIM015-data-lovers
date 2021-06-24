@@ -7,7 +7,7 @@ import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 //console.log(validarNombre);
-
+// Para el botor ingresar
 const btnIngresar = document.getElementById('btnIngresar');
 
 btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
