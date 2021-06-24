@@ -37,3 +37,42 @@ font-size: 25px;
 #txtNombre{
     margin: 30px;
 }
+
+
+
+.menu{
+    list-style: none;
+    background: yellow;
+    width: 90%;
+    margin: auto;
+}
+
+.menu li a{
+   padding: 20px;
+    
+}
+
+.menu li{
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.oculto {
+    display: none;
+}
+.desoculto {
+    display: block;
+}
+
+
+/*nav li ul{
+    display:none ;
+    position: absolute;
+    min-width: 140px;
+
+}*/
+
+/*nav li:hover > ul{
+    display: block;
+}*/

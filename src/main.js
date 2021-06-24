@@ -1,5 +1,5 @@
 import { validarNombre } from './data.js';
-import pokemon from './data/pokemon/pokemon.js';
+//import pokemon from './data/pokemon/pokemon.js';
 //import { datos } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
@@ -14,6 +14,10 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
   const txtNombre = document.getElementById('txtNombre').value;    
   console.log(txtNombre);     
   validarNombre(txtNombre);
+
+  document.getElementById('inicio').className = 'oculto';
+  document.getElementById('principal').className = 'desoculto';
+
 
 });
 
@@ -54,11 +58,31 @@ console.log(data.pokemon.length);
 document.getElementById('container').innerHTML = opciones;
 
 
-const btnFiltrar = document.getElementById('btnFiltrar');
+// const btnFiltrar = document.getElementById('btnFiltrar');
+// btnFiltrar.addEventListener('click', function filtrarPokemon()
+// {         
+//   let opciones='';
+//   for (let i = 0; i < data.pokemon.length; i++) {
+//     if (data.pokemon[i].type == 'grass') {
+      
+//       opciones += '<div class = "cards"';
+//       opciones += `<p> ${data.pokemon[i].name}<p>`;
+//       opciones += `<p> ${data.pokemon[i].type}<p>`;
+//       opciones += `<img src = ${data.pokemon[i].img} />`;
+//       opciones += '</div>';
 
-btnFiltrar.addEventListener('click', function filtrarPokemon()
-{       
+//       document.getElementById('container').innerHTML = opciones;
+//     }    
+//   }
   
+// });
+
+
+
+
+const menuTipo = document.getElementById('menuTipo');
+menuTipo.addEventListener('click', function filtrarPokemon()
+{         
   let opciones='';
   for (let i = 0; i < data.pokemon.length; i++) {
     if (data.pokemon[i].type == 'grass') {

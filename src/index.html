@@ -7,7 +7,7 @@
   </head>
   <body>    
     
-    <section id = "inicio" class="box">
+    <section id = "inicio" class="">
       <h1>POKEDEX INFO</h1>
       <img  src="imagenes/pokebola.jpeg"  /> 
       <p>Hola, ¿Cual es tu nombre? </p>
@@ -15,25 +15,25 @@
       <button id="btnIngresar">Ingresar</button>  
     </section> 
 
-    <section id ="principal" class="box oculto">
+    <section id ="principal" class="oculto">
       <header id ="msjBienvenida"></header>
-    <nav>
-        <ul>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Ordenar</a>
+    <nav class="main-nav">
+        <ul class="menu">
+            <li class="menu__item"><a href="">Inicio</a></li>
+            <li class="menu__item"><a href="">Ordenar</a>
                 <ul>
                     <li><a href="">Ascendente</a></li>
                     <li><a href="">Descendente</a></li>
                 </ul>
             </li>
-            <li><a href="">Filtrar</a>
+            <li class="menu__item"><a href="">Filtrar</a>
                 <ul>
-                    <li><a href="">Por tipo</a></li>
+                    <li id="menuTipo"><a href="">Por tipo</a></li>
                     <li><a href="">Mas fuerte</a></li>
                     <li><a href="">Region</a></li>
                 </ul>
             </li>
-            <li><a href="">Estadisticas</a></li>
+            <li class="menu__item"><a href="">Estadisticas</a></li>
         </ul>
     </nav>
     <section id="container-pokemon">
