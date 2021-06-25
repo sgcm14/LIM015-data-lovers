@@ -4,9 +4,9 @@ import { validarNombre } from '../src/data.js';
 
 
 describe('main', () => {
-  it('Validar que es una funcion', () => {
+  it('Validar que es una funcion(validarNombre)', () => {
     expect(typeof validarNombre).toBe('function');
-  });
+  });  
 
   it('validar si es vacio', () => { 
 
@@ -16,9 +16,12 @@ describe('main', () => {
       
   });
 
-//   it('ingreso dato correcto', () => {    
-//     expect(validarNombre('a')).toEqual('a');
-//   });
+  
+  it('ingreso dato correcto', () => {    
+    expect(validarNombre('Maria')).toEqual('Bienvenide Maria');
+  }); 
+
+
 });
 
 
