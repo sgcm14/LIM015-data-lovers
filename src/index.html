@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
+    <link rel="shortcut icon" href="imagenes/pokebola.png">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>    
     
     <section id = "inicio" class="">
+
       <h1>POKEDEX INFO</h1>
-      <img  src="imagenes/pokebola.jpeg"  /> 
-      <p>Hola, ¿Cual es tu nombre? </p>
-      <input type="text"  id="txtNombre" placeholder="Escribir nombre ....">
-      <button id="btnIngresar">Ingresar</button>  
+      <img  src="imagenes/pokebola.png" id="img-inicio" /> 
+      <p id="msjPregunta">Hola, ¿Cual es tu nombre? </p>
+      <input type="text"  id="txtNombre" placeholder="Escribir nombre ...." class="cajas"><br>
+      <button id="btnIngresar" class="botones">Ingresar</button>  
+
     </section> 
 
     <section id ="principal" class="oculto">
+
       <header id ="msjBienvenida"></header>
-    <nav class="main-nav">
+      <nav class="main-nav">
         <ul class="menu">
             <li class="menu__item"><a href="">Inicio</a></li>
             <li class="menu__item"><a href="">Ordenar</a>
@@ -35,20 +39,42 @@
             </li>
             <li class="menu__item"><a href="">Estadisticas</a></li>
         </ul>
-    </nav>
-    <section id="container-pokemon">
-        <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon...">
-        <button id="btnBuscar">Buscar</button>
-        <button id="btnFiltrar">Filtrar</button> <!--cambiarlo al filtro -->
-        <button id="btnOrdenar">Ordenar</button> <!--cambiarlo al Ordenar -->
-        <div id="container"></div>
+      </nav>
+
+      <section id="container">
+        <div class="elementos-container">
+          <button id="btnPokemones" class="botones">Pokemones</button>
+          <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas">
+          <button id="btnBuscar" class="botones">Buscar</button>
+          <button id="btnOrdenar" class="botones">Ordenar</button> <!--cambiarlo al Ordenar -->
+          <select id="slcTipos" >
+            <option disabled selected>Selecciona tipo de Pokemon</option>
+            <option value="grass">grass</option>
+            <option value="poison">poison</option>
+            <option value="fire">fire</option>
+            <option value="flying">flying</option>
+            <option value="bug">bug</option>
+            <option value="normal">normal</option>
+            <option value="ground">ground</option>
+            <option value="fighting">fighting</option>
+            <option value="electric">electric</option>
+            <option value="water">water</option>
+            <option value="psychic">psychic</option>
+            <option value="rock">rock</option>
+            <option value="ice">ice</option>
+            <option value="ghost">ghost</option>
+            <option value="dragon">dragon</option>
+            <option value="fairy">fairy</option>
+            <option value="dark">dark</option>
+            <option value="steel">steel</option>
+          </select>
+        </div>
+        <div id="container-pokemon"></div>
         
-    </section>      
+      </section>      
 
     </section>
     
-    
-
     <script src="main.js" type="module"></script>
   </body>
 </html>
