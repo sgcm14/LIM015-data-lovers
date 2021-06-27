@@ -1,26 +1,20 @@
 //import { example, anotherExample } from '../src/data.js';
+import { validateName } from '../src/data.js';
 
-import { validarNombre } from '../src/data.js';
-
-
-describe('main', () => {
-  it('Validar que es una funcion(validarNombre)', () => {
-    expect(typeof validarNombre).toBe('function');
+describe('validateName', () => {
+  it('should be an function', () => {
+    expect(typeof validateName).toBe('function');
   });  
 
-  it('validar si es vacio', () => { 
-
-    expect(() => validarNombre()).toThrow(TypeError);
-    expect(() => validarNombre(0)).toThrow(TypeError);
-    expect(() => validarNombre(null)).toThrow(TypeError);
-      
+  it('should throw TypeError when invoked with wrong argument types', () => { 
+    expect(() => validateName()).toThrow(TypeError);
+    expect(() => validateName(0)).toThrow(TypeError);
+    expect(() => validateName(null)).toThrow(TypeError); 
   });
 
-  
-  it('ingreso dato correcto', () => {    
-    expect(validarNombre('Maria')).toEqual('Bienvenide Maria');
+  it('should return "¡ Bienvenid@ Maestr@ Pokemon Maria !" for "Maria"', () => {    
+    expect(validateName('Maria')).toEqual('¡ Bienvenid@ Maestr@ Pokemon Maria !');
   }); 
-
 
 });
 
