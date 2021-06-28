@@ -30,8 +30,8 @@ export const loadPokemon = (data) => {
     print += `<p>${data[i].stats['max-hp']} HP</p>`;        
     print += `<img src = ${data[i].img} />`;
     print += `<p> ${data[i].type}</p>`;
-    print += `<p>height: ${data[i].size['weight']}</p>`;
-    print += `<p>weight: ${data[i].size['height']}</p>`;
+    print += `<p>height: ${data[i].size['height']}</p>`;
+    print += `<p>weight: ${data[i].size['weight']}</p>`;
     print += '</div>';  
   }
   return print;  
@@ -52,8 +52,8 @@ export const searchPokemon = (data, namePokemon) => {
       print += `<p>${data[i].stats['max-hp']} HP</p>`;        
       print += `<img src = ${data[i].img} />`;
       print += `<p> ${data[i].type}</p>`;
-      print += `<p>height: ${data[i].size['weight']}</p>`;
-      print += `<p>weight: ${data[i].size['height']}</p>`;
+      print += `<p>height: ${data[i].size['height']}</p>`;
+      print += `<p>weight: ${data[i].size['weight']}</p>`;
       print += '</div>';
     }   
   }
@@ -62,7 +62,7 @@ export const searchPokemon = (data, namePokemon) => {
 };
 
 /* 
- * Fitrar Datos
+ * Fitrar Datos Tipo
  */ 
 export const filterData = (data, condition) => {
 
@@ -76,8 +76,8 @@ export const filterData = (data, condition) => {
         print += `<p>${data[i].stats['max-hp']} HP</p>`;        
         print += `<img src = ${data[i].img} />`;
         print += `<p> ${data[i].type}</p>`;
-        print += `<p>height: ${data[i].size['weight']}</p>`;
-        print += `<p>weight: ${data[i].size['height']}</p>`;
+        print += `<p>height: ${data[i].size['height']}</p>`;
+        print += `<p>weight: ${data[i].size['weight']}</p>`;
         print += '</div>';   
       }      
     }
@@ -85,3 +85,13 @@ export const filterData = (data, condition) => {
   return print;  
   
 };
+
+// export const sortData = (data, sortBy, sortOrder) => {
+
+
+  
+  
+// };
+
+
+

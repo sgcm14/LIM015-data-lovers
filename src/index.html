@@ -13,7 +13,7 @@
       <h1>POKEDEX INFO</h1>
       <img  src="imagenes/pokebola.png" id="img-inicio" /> 
       <p id="msjPregunta">Hola, ¿Cual es tu nombre? </p>
-      <input type="text"  id="txtNombre" placeholder="Escribir nombre ...." class="cajas"><br>
+      <input type="text"  id="txtNombre" placeholder="Escribir nombre ...." class="cajas" /><br>
       <button id="btnIngresar" class="botones">Ingresar</button>  
 
     </section> 
@@ -22,8 +22,11 @@
 
       <header id ="msjBienvenida"></header>
       <nav class="main-nav">
-        <ul class="menu">
-            <li class="menu__item"><a href="">Inicio</a></li>
+        <button id="btnPokemones" class="botones">Inicio</button>
+        <button id="btnFiltrar" class="botones">Filtrar</button>
+        <button id="btnOrdenar" class="botones">Ordenar</button>
+        <!--<ul class="menu">
+            <li class="menu__item" id="cargar"><a href="#principal">Inicio</a></li>
             <li class="menu__item"><a href="">Ordenar</a>
                 <ul>
                     <li><a href="">Ascendente</a></li>
@@ -32,22 +35,25 @@
             </li>
             <li class="menu__item"><a href="">Filtrar</a>
                 <ul>
-                    <li id="menuTipo"><a href="">Por tipo</a></li>
-                    <li><a href="">Mas fuerte</a></li>
-                    <li><a href="">Region</a></li>
+                    <li id="menuTipo"><a href="">Por tipo</a></li>                    
+                    <li id="slctRegion"><a href="">Region</a>                      
+                    </li>
                 </ul>
             </li>
             <li class="menu__item"><a href="">Estadisticas</a></li>
-        </ul>
+        </ul> -->
       </nav>
 
       <section id="container">
-        <div class="elementos-container">
-          <button id="btnPokemones" class="botones">Pokemones</button>
-          <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas">
+        <div class="elementos-container-inicio">
+         
+          <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas" />
           <button id="btnBuscar" class="botones">Buscar</button>
-          <button id="btnOrdenar" class="botones">Ordenar</button> <!--cambiarlo al Ordenar -->
-          <select id="slcTipos" >
+          
+          
+        </div>
+        <div class="elementos-container-filtrar">
+          <select id="slcTipos" class="oculto">
             <option disabled selected>Selecciona tipo de Pokemon</option>
             <option value="grass">grass</option>
             <option value="poison">poison</option>
@@ -67,6 +73,14 @@
             <option value="fairy">fairy</option>
             <option value="dark">dark</option>
             <option value="steel">steel</option>
+          </select>
+        </div>
+        <div class="elementos-container-ordenar">
+          <!--<button id="btnOrdenarA" class="botones oculto">Ascendente</button> cambiarlo al Ordenar -->
+          <select id="slcOrden" class="oculto">
+            <option disabled selected>Selecciona orden de Pokemon</option>
+            <option value="ascendente">ascendente</option>
+            <option value="descendente">descendente</option>
           </select>
         </div>
         <div id="container-pokemon"></div>

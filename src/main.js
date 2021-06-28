@@ -20,6 +20,39 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
 
 });
 
+const btnFiltrar = document.getElementById('btnFiltrar');
+btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
+  
+  document.getElementById('txtBuscar').className = 'oculto';
+  document.getElementById('btnBuscar').className = 'oculto';
+  document.getElementById('slcOrden').className = 'oculto';
+
+  document.getElementById('slcTipos').className = 'desoculto';
+
+});
+
+const btnOrdenar = document.getElementById('btnOrdenar');
+btnOrdenar.addEventListener('click', () => {  //function ingresarNombre()
+  
+  document.getElementById('txtBuscar').className = 'oculto';
+  document.getElementById('btnBuscar').className = 'oculto';
+  document.getElementById('slcOrden').className = 'desoculto';
+
+  document.getElementById('slcTipos').className = 'oculto';
+
+});
+
+const btnPokemones = document.getElementById('btnPokemones');
+btnPokemones.addEventListener('click', () => {  //function ingresarNombre()
+  
+  document.getElementById('txtBuscar').className = 'desoculto';
+  document.getElementById('btnBuscar').className = 'desoculto';
+  document.getElementById('slcOrden').className = 'oculto';
+
+  document.getElementById('slcTipos').className = 'oculto';
+
+});
+
 /* 
  * Cargar Pokemones
  */ 
@@ -27,13 +60,16 @@ const datos = data.pokemon;
 document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 
 /* 
- * Botón Buscar: Se ingresa el nombre de un pokemón
+ * Botón Cargar Pokemones
  */ 
-const btnPokemones = document.getElementById('btnPokemones');
-btnPokemones.addEventListener('click', () => { //function ingresarPokemon()
+//const btnPokemones = document.getElementById('btnPokemones');
+btnPokemones.addEventListener('click', () => { //function Cargar Pokemones()
   
   document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 });
+
+
+
 
 /* 
  * Botón Buscar: Se ingresa el nombre de un pokemón
@@ -91,10 +127,7 @@ slcTipos.addEventListener('change',  () => {
     break;
   case 'rock':
     condicion = 'rock';
-    break;
-  case 'x':
-    condicion = 'x';
-    break;
+    break;  
   case 'ice':
     condicion = 'ice';
     break;
@@ -120,27 +153,128 @@ slcTipos.addEventListener('change',  () => {
   document.getElementById('container-pokemon').innerHTML = filterData(datos, condicion);
 });
 
+const slcOrden = document.getElementById('slcOrden');
+slcOrden.addEventListener('change',  () => {
+
+  //const name = name;
+  const tipo=document.getElementById('slcOrden').value;
+  let condicion = '';
+  switch (tipo) {
+  case 'ascendente':
+    condicion = 'ascendente';
+    break;
+  case 'descendente':
+    condicion = 'descendente';
+    break;
+  default:
+    console.log('no eligio nada');
+    break;   
+  
+  }
+  
+  if(condicion == 'ascendente'){
+    const datosOrdenado = datos.sort(function(prev, next){
+      if(prev.name > next.name){
+        return 1;
+      }
+      if(prev.name < next.name){
+        return -1;
+      }
+      return 0;
+    }); console.log(datosOrdenado);
+
+    let print='';
+    for (let i = 0; i < datosOrdenado.length; i++) {
+      print += '<div class ="card">';
+      print += `<p> ${datosOrdenado[i].num}</p>`;
+      print += `<h2> ${datosOrdenado[i].name}</h2>`;
+      print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
+      print += `<img src = ${datosOrdenado[i].img} />`;
+      print += `<p> ${datosOrdenado[i].type}</p>`;
+      print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
+      print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
+      print += '</div>';  
+    }
+    //return print;  
+    document.getElementById('container-pokemon').innerHTML = print;
+
+  } else  if(condicion == 'descendente'){
+    const datosOrdenado = datos.sort(function(prev, next){
+      if(prev.name > next.name){
+        return -1;
+      }
+      if(prev.name < next.name){
+        return 1;
+      }
+      return 0;
+    }); console.log(datosOrdenado);
+
+    let print='';
+    for (let i = 0; i < datosOrdenado.length; i++) {
+      print += '<div class ="card">';
+      print += `<p> ${datosOrdenado[i].num}</p>`;
+      print += `<h2> ${datosOrdenado[i].name}</h2>`;
+      print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
+      print += `<img src = ${datosOrdenado[i].img} />`;
+      print += `<p> ${datosOrdenado[i].type}</p>`;
+      print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
+      print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
+      print += '</div>';  
+    }
+    //return print;  
+    document.getElementById('container-pokemon').innerHTML = print;
+  }
+ 
+  //console.log(datosOrdenado);
+  
+
+  
+  
+
+  //document.getElementById('container-pokemon').innerHTML = sortData(datos, name,condicion);
+});
+
 /* 
  * Botón Ordenar: Ordenar pokemones
  */ 
-const btnOrdenar = document.getElementById('btnOrdenar');
-btnOrdenar.addEventListener('click', () => { //function OrdenarPokemon()
+// const btnOrdenarA = document.getElementById('btnOrdenarA');
+// btnOrdenarA.addEventListener('click', () => { //function OrdenarPokemon()    
 
-  //const datos = data.pokemon;
-  const campo = 'name';   
-  const array = [];
-  for (let i = 0; i < datos.length; i++) {
-    if(campo == 'name'){
-      array.push(datos[i].name);
-    //console.log(datos[i].name);
-    }      
-  }
-  console.log(array);
-  console.log(array.sort());
-  console.log(array.reverse());
-  //document.getElementById('container-pokemon').innerHTML = filterData(datos, campo); 
+//   const datosOrdenado = datos.sort(function(prev, next){
+//     if(prev.name > next.name){
+//       return 1;
+//     }
+//     if(prev.name < next.name){
+//       return -1;
+//     }
+//     return 0;
+//   });
 
-});
+//   console.log(datosOrdenado);
+
+//   let print='';
+//   for (let i = 0; i < datosOrdenado.length; i++) {
+//     print += '<div class ="card">';
+//     print += `<p> ${datosOrdenado[i].num}</p>`;
+//     print += `<h2> ${datosOrdenado[i].name}</h2>`;
+//     print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
+//     print += `<img src = ${datosOrdenado[i].img} />`;
+//     print += `<p> ${datosOrdenado[i].type}</p>`;
+//     print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
+//     print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
+//     print += '</div>';  
+//   }
+//   //return print;  
+//   document.getElementById('container-pokemon').innerHTML = print;
+  
+
+   
+  
+// });
+
+
+
+
 
 
 
