@@ -1,4 +1,4 @@
-import { searchPokemon, filterData, loadPokemon, validateName } from './data.js';
+import { searchPokemon, filterData, loadPokemon, validateName, sortData, computeStats } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 /* 
@@ -26,8 +26,11 @@ btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtBuscar').className = 'oculto';
   document.getElementById('btnBuscar').className = 'oculto';
   document.getElementById('slcOrden').className = 'oculto';
-
   document.getElementById('slcTipos').className = 'desoculto';
+  document.getElementById('txtPoke1').className = 'oculto';
+  document.getElementById('txtPoke2').className = 'oculto';
+  document.getElementById('btnCalcular').className = 'oculto';
+  document.getElementById('tituloCalcular').className = 'oculto';
 
 });
 
@@ -37,8 +40,11 @@ btnOrdenar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtBuscar').className = 'oculto';
   document.getElementById('btnBuscar').className = 'oculto';
   document.getElementById('slcOrden').className = 'desoculto';
-
   document.getElementById('slcTipos').className = 'oculto';
+  document.getElementById('txtPoke1').className = 'oculto';
+  document.getElementById('txtPoke2').className = 'oculto';
+  document.getElementById('btnCalcular').className = 'oculto';
+  document.getElementById('tituloCalcular').className = 'oculto';
 
 });
 
@@ -48,8 +54,26 @@ btnPokemones.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtBuscar').className = 'desoculto';
   document.getElementById('btnBuscar').className = 'desoculto';
   document.getElementById('slcOrden').className = 'oculto';
-
   document.getElementById('slcTipos').className = 'oculto';
+  document.getElementById('txtPoke1').className = 'oculto';
+  document.getElementById('txtPoke2').className = 'oculto';
+  document.getElementById('btnCalcular').className = 'oculto';
+  document.getElementById('tituloCalcular').className = 'oculto';
+
+});
+
+const btnEstadistica = document.getElementById('btnEstadistica');
+btnEstadistica.addEventListener('click', () => {  //function ingresarNombre()
+  
+  document.getElementById('txtBuscar').className = 'oculto';
+  document.getElementById('btnBuscar').className = 'oculto';
+  document.getElementById('slcOrden').className = 'oculto';
+  document.getElementById('slcTipos').className = 'oculto';
+  document.getElementById('txtPoke1').className = 'desoculto';
+  document.getElementById('txtPoke2').className = 'desoculto';
+  document.getElementById('btnCalcular').className = 'desoculto';
+  document.getElementById('tituloCalcular').className = 'desoculto';
+
 
 });
 
@@ -80,7 +104,7 @@ btnBuscar.addEventListener('click', () => { //function ingresarPokemon()
   //const datos = data.pokemon;
   const nombrePokemon = document.getElementById('txtBuscar').value;
   document.getElementById('container-pokemon').innerHTML = searchPokemon(datos, nombrePokemon);
-  document.getElementById('txtBuscar').value='';
+  //document.getElementById('txtBuscar').value='';
 });
 
 /*
@@ -156,7 +180,8 @@ slcTipos.addEventListener('change',  () => {
 const slcOrden = document.getElementById('slcOrden');
 slcOrden.addEventListener('change',  () => {
 
-  //const name = name;
+  const name = 'name';
+
   const tipo=document.getElementById('slcOrden').value;
   let condicion = '';
   switch (tipo) {
@@ -167,180 +192,83 @@ slcOrden.addEventListener('change',  () => {
     condicion = 'descendente';
     break;
   default:
-    console.log('no eligio nada');
+    condicion = 'Elige opcion';
     break;   
-  
-  }
-  
-  if(condicion == 'ascendente'){
-    const datosOrdenado = datos.sort(function(prev, next){
-      if(prev.name > next.name){
-        return 1;
-      }
-      if(prev.name < next.name){
-        return -1;
-      }
-      return 0;
-    }); console.log(datosOrdenado);
-
-    let print='';
-    for (let i = 0; i < datosOrdenado.length; i++) {
-      print += '<div class ="card">';
-      print += `<p> ${datosOrdenado[i].num}</p>`;
-      print += `<h2> ${datosOrdenado[i].name}</h2>`;
-      print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
-      print += `<img src = ${datosOrdenado[i].img} />`;
-      print += `<p> ${datosOrdenado[i].type}</p>`;
-      print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
-      print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
-      print += '</div>';  
-    }
-    //return print;  
-    document.getElementById('container-pokemon').innerHTML = print;
-
-  } else  if(condicion == 'descendente'){
-    const datosOrdenado = datos.sort(function(prev, next){
-      if(prev.name > next.name){
-        return -1;
-      }
-      if(prev.name < next.name){
-        return 1;
-      }
-      return 0;
-    }); console.log(datosOrdenado);
-
-    let print='';
-    for (let i = 0; i < datosOrdenado.length; i++) {
-      print += '<div class ="card">';
-      print += `<p> ${datosOrdenado[i].num}</p>`;
-      print += `<h2> ${datosOrdenado[i].name}</h2>`;
-      print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
-      print += `<img src = ${datosOrdenado[i].img} />`;
-      print += `<p> ${datosOrdenado[i].type}</p>`;
-      print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
-      print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
-      print += '</div>';  
-    }
-    //return print;  
-    document.getElementById('container-pokemon').innerHTML = print;
-  }
- 
-  //console.log(datosOrdenado);
-  
-
-  
-  
-
-  //document.getElementById('container-pokemon').innerHTML = sortData(datos, name,condicion);
+  }  
+  document.getElementById('container-pokemon').innerHTML = sortData(datos,name, condicion); 
+   
 });
 
-/* 
- * Botón Ordenar: Ordenar pokemones
- */ 
-// const btnOrdenarA = document.getElementById('btnOrdenarA');
-// btnOrdenarA.addEventListener('click', () => { //function OrdenarPokemon()    
 
-//   const datosOrdenado = datos.sort(function(prev, next){
-//     if(prev.name > next.name){
-//       return 1;
-//     }
-//     if(prev.name < next.name){
-//       return -1;
-//     }
-//     return 0;
-//   });
 
-//   console.log(datosOrdenado);
+const btnCalcular = document.getElementById('btnCalcular');
+btnCalcular.addEventListener('click', () => { 
 
-//   let print='';
-//   for (let i = 0; i < datosOrdenado.length; i++) {
-//     print += '<div class ="card">';
-//     print += `<p> ${datosOrdenado[i].num}</p>`;
-//     print += `<h2> ${datosOrdenado[i].name}</h2>`;
-//     print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
-//     print += `<img src = ${datosOrdenado[i].img} />`;
-//     print += `<p> ${datosOrdenado[i].type}</p>`;
-//     print += `<p>height: ${datosOrdenado[i].size['height']}</p>`;
-//     print += `<p>weight: ${datosOrdenado[i].size['weight']}</p>`;
-//     print += '</div>';  
-//   }
-//   //return print;  
-//   document.getElementById('container-pokemon').innerHTML = print;
+  //const datos = data.pokemon;
+  const txtPoke1 = document.getElementById('txtPoke1').value;
+  const txtPoke2 = document.getElementById('txtPoke2').value;
   
+  document.getElementById('container-pokemon').innerHTML = computeStats(datos,txtPoke1, txtPoke2);
+  
+});
 
-   
+
+// const btnCalcular = document.getElementById('btnCalcular');
+// btnCalcular.addEventListener('click', () => { 
+
+//   //const datos = data.pokemon;
+//   const txtPoke1 = document.getElementById('txtPoke1').value;
+//   const txtPoke2 = document.getElementById('txtPoke2').value;
+//   let suma1 ='';
+//   let suma2 ='';
+//   let print1='';
+//   let print2 ='';
+//   for (let i = 0; i < data.pokemon.length; i++) {
+//     if (data.pokemon[i].name == txtPoke1) {
+//       suma1 = parseInt(data.pokemon[i].stats['base-attack']) + parseInt(data.pokemon[i].stats['base-defense']) +
+//         parseInt(data.pokemon[i].stats['base-stamina']) + parseInt(data.pokemon[i].stats['max-cp']) +
+//         parseInt(data.pokemon[i].stats['max-hp']);  
+        
+//       print1 += '<div class ="card">'; 
+//       print1 += `<p> ${data.pokemon[i].num}</p>`;   
+//       print1 += `<h2> ${data.pokemon[i].name}</h2>`;    
+//       print1 += `<p>${data.pokemon[i].stats['max-hp']} HP</p>`;        
+//       print1 += `<img src = ${data.pokemon[i].img} />`;
+//       print1 += `<p> ${data.pokemon[i].type}</p>`;
+//       print1 += `<p>height: ${data.pokemon[i].size['height']}</p>`;   
+//       print1 += `<p>weight: ${data.pokemon[i].size['weight']}</p>`;    
+//       print1 += '</div>';  
+
+//     }  
+
+//     if (data.pokemon[i].name == txtPoke2) {
+//       suma2 = parseInt(data.pokemon[i].stats['base-attack']) + parseInt(data.pokemon[i].stats['base-defense']) +
+//           parseInt(data.pokemon[i].stats['base-stamina']) + parseInt(data.pokemon[i].stats['max-cp']) +
+//           parseInt(data.pokemon[i].stats['max-hp']);
+          
+//       print2 += '<div class ="card">'; 
+//       print2 += `<p> ${data.pokemon[i].num}</p>`;   
+//       print2 += `<h2> ${data.pokemon[i].name}</h2>`;    
+//       print2 += `<p>${data.pokemon[i].stats['max-hp']} HP</p>`;        
+//       print2 += `<img src = ${data.pokemon[i].img} />`;
+//       print2 += `<p> ${data.pokemon[i].type}</p>`;
+//       print2 += `<p>height: ${data.pokemon[i].size['height']}</p>`;   
+//       print2 += `<p>weight: ${data.pokemon[i].size['weight']}</p>`;    
+//       print2 += '</div>';      
+  
+//     }  
+//   }
+//   console.log(suma1);
+//   console.log(suma2);
+
+//   if (suma1>suma2){
+//     console.log('el mayor es ' + suma1);
+//     document.getElementById('container-pokemon').innerHTML = print1;
+//   }else {
+//     console.log('el mayor es ' + suma2);  
+//     document.getElementById('container-pokemon').innerHTML = print2;
+//   }
   
 // });
 
 
-
-
-
-
-
-/* 
- * Botón Filtar: Filtrar pokemones
- 
-const btnFiltrar = document.getElementById('btnFiltrar');
-btnFiltrar.addEventListener('click', () => { //function filtrarPokemon()
-
-  //const datos = data.pokemon;
-  const condicion = 'grass';
-  document.getElementById('container-pokemon').innerHTML = filterData(datos, condicion); 
-
-}); */
-
-/* 
- * Carga Pokemones
-let opciones='';
-
-for (let i = 0; i < data.pokemon.length; i++) {
-  opciones += '<div class = "card"';
-  opciones += `<p> ${data.pokemon[i].num}<p>`;
-  opciones += `<p> ${data.pokemon[i].name}<p>`;
-  opciones += `<p>${data.pokemon[i].stats['max-hp']} HP<p>`;
-  opciones += `<img src = ${data.pokemon[i].img} />`;
-  opciones += `<p> ${data.pokemon[i].type}<p>`;
-  opciones += `<p>height: ${data.pokemon[i].size['weight']}<p>`;
-  opciones += `<p>weight: ${data.pokemon[i].size['height']}<p>`;
-  opciones += '</div>';
-}
-document.getElementById('container-pokemon').innerHTML = opciones;  */ 
-
-/* 
- * Botón Buscar: Se ingresa el nombre de un pokemón
-
-const btnBuscar = document.getElementById('btnBuscar');
-btnBuscar.addEventListener('click', () => { //function ingresarPokemon()
-
-  const nombrePokemon = document.getElementById('txtBuscar').value;
-  let opciones='';
-  for (let i = 0; i < data.pokemon.length; i++) {
-    if (data.pokemon[i].name == nombrePokemon) {
-      opciones += '<div class = "card"';
-      opciones += `<p> ${data.pokemon[i].name}<p>`;
-      opciones += `<img src = ${data.pokemon[i].img} />`;
-      opciones += '</div>';
-    }   
-  }
-  document.getElementById('container-pokemon').innerHTML = opciones;  
-
-});  */ 
-
-/* const menuTipo = document.getElementById('menuTipo');
-menuTipo.addEventListener('click', function filtrarPokemon()
-{     
-      
-  let opciones='';
-  for (let i = 0; i < data.pokemon.length; i++) {
-    if (data.pokemon[i].type == 'grass') {
-      opciones += '<div class = "card"';
-      opciones += `<p> ${data.pokemon[i].name}<p>`;
-      opciones += `<p> ${data.pokemon[i].type}<p>`;
-      opciones += `<img src = ${data.pokemon[i].img} />`;
-      opciones += '</div>';
-      document.getElementById('container-pokemon').innerHTML = opciones;
-    }    
-  }
-  
-}); */
