@@ -1,9 +1,3 @@
-// estas funciones son de ejemplo
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
 /* 
  * Validar el nombre: si es correcto devuelve el nombre de usuario
  */ 
@@ -14,12 +8,121 @@ export const validateName = (name) => {
     //document.getElementById('txtNombre').focus();
   }
   return `¡ Bienvenid@ Maestr@ Pokemon ${name} !`;
+};
 
+/* 
+ * Buscar Pokemon por nombre
+ */ 
+export const searchPokemon = (data, namePokemon) => {
+  
+  const arrayPoke = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].name == namePokemon) {
+      arrayPoke.push(data[i]); 
+    }   
+  }
+  //console.log(arrayPoke);
+  return arrayPoke; 
+};
+
+/* 
+ * Fitrar Datos por Tipo
+ */ 
+export const filterData = (data, condition) => {
+
+  const arrayFilter=[];
+  for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data[i].type.length; j++) {             
+      if (data[i].type[j] == condition) {    
+        arrayFilter.push(data[i]);
+      }      
+    }
+  }  
+  return arrayFilter;  
+};
+
+/* 
+ * Ordenar Datos por Nombre
+ */
+export const sortData = (data, sortBy, sortOrder) => {
+  //sortBy='name';
+  if(sortBy == 'name'){
+    if(sortOrder == 'ascendente'){
+      const datosOrdenado = data.sort(function(prev, next){
+        if(prev.name > next.name){
+          return 1;
+        }
+        if(prev.name < next.name){
+          return -1;
+        }
+        return 0;
+      });
+      const arrayAsc=[];
+      for (let i = 0; i < datosOrdenado.length; i++) {
+        arrayAsc.push(datosOrdenado[i]);
+      }
+      return arrayAsc;      
+
+    } else  if(sortOrder == 'descendente'){
+      const datosOrdenado = data.sort(function(prev, next){
+        if(prev.name > next.name){
+          return -1;
+        }
+        if(prev.name < next.name){
+          return 1;
+        }
+        return 0;
+      });
+      const arrayDesc=[];
+      for (let i = 0; i < datosOrdenado.length; i++) {
+        arrayDesc.push(datosOrdenado[i]);
+      }
+      return arrayDesc;
+    }  
+  }
+};
+
+/* 
+ * Calcular pokemon mas fuerte
+ */
+export const computeStats = (data, nameFirst, nameSecond) => {
+
+  let suma1 ='';
+  let suma2 ='';
+  const poke1=[];
+  const poke2 =[];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].name == nameFirst) {
+      suma1 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
+        parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
+        parseInt(data[i].stats['max-hp']);        
+      poke1.push(data[i]);
+    }  
+
+    if (data[i].name == nameSecond) {
+      suma2 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
+          parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
+          parseInt(data[i].stats['max-hp']);          
+      poke2.push(data[i]);  
+    }  
+  }
+  console.log(suma1);
+  console.log(suma2);
+
+  if (suma1>suma2){
+    console.log('el mayor es ' + suma1);    
+    return poke1;
+  }else {
+    console.log('el mayor es ' + suma2);    
+    return poke2;
+  }
+
+  
 };
 
 /* 
  * Cargar Pokemones
- */ 
+  
 export const loadPokemon = (data) => {
 
   let print='';
@@ -36,16 +139,17 @@ export const loadPokemon = (data) => {
   }
   return print;  
 
-};
+};*/
 
 /* 
  * Buscar Pokemon por nombre
- */ 
+ 
 export const searchPokemon = (data, namePokemon) => {
   
   let print='';
   for (let i = 0; i < data.length; i++) {
     if (data[i].name == namePokemon) {
+      
       print += '<div class ="card">';
       print += `<p># ${data[i].num}</p>`;
       print += `<h2> ${data[i].name}</h2>`;
@@ -59,11 +163,11 @@ export const searchPokemon = (data, namePokemon) => {
   }
   return print;  
 
-};
+};*/ 
 
 /* 
  * Fitrar Datos por Tipo
- */ 
+
 export const filterData = (data, condition) => {
 
   let print='';
@@ -84,11 +188,11 @@ export const filterData = (data, condition) => {
   }  
   return print;  
   
-};
+}; */ 
 
 /* 
  * Ordenar Datos por Nombre
- */
+ 
 export const sortData = (data, sortBy, sortOrder) => {
   //sortBy='name';
   if(sortBy == 'name'){
@@ -144,11 +248,12 @@ export const sortData = (data, sortBy, sortOrder) => {
       return print;
     }  
   }
-};
+};*/
+
 
 /* 
  * Calcular pokemon mas fuerte
- */
+ 
 export const computeStats = (data, nameFirst, nameSecond) => {
 
   let suma1 ='';
@@ -204,4 +309,4 @@ export const computeStats = (data, nameFirst, nameSecond) => {
   }
 
   
-};
+};*/

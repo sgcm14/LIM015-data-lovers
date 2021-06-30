@@ -1,5 +1,30 @@
-import { searchPokemon, filterData, loadPokemon, validateName, sortData, computeStats } from './data.js';
+import { searchPokemon, filterData, validateName, sortData, computeStats } from './data.js';
 import data from './data/pokemon/pokemon.js';
+
+/* 
+ *Template carga Pokemon
+ */ 
+
+const datos = data.pokemon; // variable global(Manejo de la data)
+
+const loadPokemon = (listaPoke) => {
+  let templateList ='';
+  listaPoke.forEach((datos) => {
+   
+    const print = `<div class ="card">
+   <p># ${datos.num}</p>
+   <h2> ${datos.name}</h2>
+   <p>${datos.stats['max-hp']} HP</p>        
+   <img src = ${datos.img} />
+   <p> ${datos.type}</p>
+   <p>height: ${datos.size['height']}</p>
+   <p>weight: ${datos.size['weight']}</p>
+   </div>`;
+    templateList += print;    
+  });
+  document.getElementById('container-pokemon').innerHTML = templateList;
+};
+loadPokemon(datos);
 
 /* 
  *Esto hace que el cursor siempre esté en el input
@@ -11,25 +36,17 @@ document.getElementById('txtNombre').focus();
  */ 
 const btnIngresar = document.getElementById('btnIngresar');
 btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
-
   const txtNombre = document.getElementById('txtNombre').value;
-  document.getElementById('msjBienvenida').innerText = validateName(txtNombre);
-  console.log(txtNombre);  //borrar
+  document.getElementById('msjBienvenida').innerText = validateName(txtNombre);  
   document.getElementById('inicio').className = 'oculto';
   document.getElementById('principal').className = 'desoculto';
-
 });
 
 /* 
- * Cargar Pokemones
- */ 
-const datos = data.pokemon;
-document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-
-
+ * Botón Filtar: Menu
+ */
 const btnFiltrar = document.getElementById('btnFiltrar');
-btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
-  
+btnFiltrar.addEventListener('click', () => {   
   document.getElementById('txtBuscar').className = 'oculto';
   document.getElementById('btnBuscar').className = 'oculto';
   document.getElementById('slcOrden').className = 'oculto';
@@ -38,13 +55,14 @@ btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
-  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-
+  loadPokemon(datos);
 });
 
+/* 
+ * Botón Ordenar: Menu
+ */
 const btnOrdenar = document.getElementById('btnOrdenar');
-btnOrdenar.addEventListener('click', () => {  //function ingresarNombre()
-  
+btnOrdenar.addEventListener('click', () => {    
   document.getElementById('txtBuscar').className = 'oculto';
   document.getElementById('btnBuscar').className = 'oculto';
   document.getElementById('slcOrden').className = 'desoculto';
@@ -53,13 +71,14 @@ btnOrdenar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
-  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-
+  loadPokemon(datos);
 });
 
+/* 
+ * Botón Inicio:  Menu
+ */
 const btnPokemones = document.getElementById('btnPokemones');
-btnPokemones.addEventListener('click', () => {  //function ingresarNombre()
-  
+btnPokemones.addEventListener('click', () => {    
   document.getElementById('txtBuscar').className = 'desoculto';
   document.getElementById('btnBuscar').className = 'desoculto';
   document.getElementById('slcOrden').className = 'oculto';
@@ -68,12 +87,14 @@ btnPokemones.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
-  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-
+  loadPokemon(datos);
 });
 
+/* 
+ * Botón Estadistica:  Menu
+ */
 const btnEstadistica = document.getElementById('btnEstadistica');
-btnEstadistica.addEventListener('click', () => {  //function ingresarNombre()
+btnEstadistica.addEventListener('click', () => {  
   
   document.getElementById('txtBuscar').className = 'oculto';
   document.getElementById('btnBuscar').className = 'oculto';
@@ -83,34 +104,16 @@ btnEstadistica.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'desoculto';
   document.getElementById('btnCalcular').className = 'desoculto';
   document.getElementById('tituloCalcular').className = 'desoculto';
-  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-
+  loadPokemon(datos);
 });
-
-
-
-/* 
- * Botón Cargar Pokemones
- */ 
-//const btnPokemones = document.getElementById('btnPokemones');
-btnPokemones.addEventListener('click', () => { //function Cargar Pokemones()
-  
-  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
-});
-
-
-
 
 /* 
  * Botón Buscar: Se ingresa el nombre de un pokemón
  */ 
 const btnBuscar = document.getElementById('btnBuscar');
-btnBuscar.addEventListener('click', () => { //function ingresarPokemon()
-
-  //const datos = data.pokemon;
-  const nombrePokemon = document.getElementById('txtBuscar').value;
-  document.getElementById('container-pokemon').innerHTML = searchPokemon(datos, nombrePokemon);
-  //document.getElementById('txtBuscar').value='';
+btnBuscar.addEventListener('click', () => { 
+  const nombrePokemon = document.getElementById('txtBuscar').value;    
+  loadPokemon(searchPokemon(datos, nombrePokemon));
 });
 
 /*
@@ -118,7 +121,6 @@ btnBuscar.addEventListener('click', () => { //function ingresarPokemon()
 */
 const slcTipos = document.getElementById('slcTipos');
 slcTipos.addEventListener('change',  () => {
-
   const tipo=document.getElementById('slcTipos').value;
   let condicion = '';
   switch (tipo) {
@@ -179,15 +181,16 @@ slcTipos.addEventListener('change',  () => {
   default:
     console.log('no eligio nada');
     break;
-  }
-  document.getElementById('container-pokemon').innerHTML = filterData(datos, condicion);
+  }  
+  loadPokemon(filterData(datos, condicion));  
 });
 
+/*
+ * Select Ordenar: Ordenar pokemones 
+*/
 const slcOrden = document.getElementById('slcOrden');
 slcOrden.addEventListener('change',  () => {
-
   const name = 'name';
-
   const tipo=document.getElementById('slcOrden').value;
   let condicion = '';
   switch (tipo) {
@@ -200,22 +203,18 @@ slcOrden.addEventListener('change',  () => {
   default:
     condicion = 'Elige opcion';
     break;   
-  }  
-  document.getElementById('container-pokemon').innerHTML = sortData(datos,name, condicion); 
-   
+  }    
+  loadPokemon(sortData(datos,name, condicion));
 });
 
-
-
+/*
+ * Select Filtar: Filtrar pokemones 
+*/
 const btnCalcular = document.getElementById('btnCalcular');
-btnCalcular.addEventListener('click', () => { 
-
-  //const datos = data.pokemon;
+btnCalcular.addEventListener('click', () => {   
   const txtPoke1 = document.getElementById('txtPoke1').value;
-  const txtPoke2 = document.getElementById('txtPoke2').value;
-  
-  document.getElementById('container-pokemon').innerHTML = computeStats(datos,txtPoke1, txtPoke2);
-  
+  const txtPoke2 = document.getElementById('txtPoke2').value; 
+  loadPokemon(computeStats(datos,txtPoke1, txtPoke2));   
 });
 
 
@@ -276,5 +275,16 @@ btnCalcular.addEventListener('click', () => {
 //   }
   
 // });
+
+
+/* 
+ * Botón Cargar Pokemones
+ 
+//const btnPokemones = document.getElementById('btnPokemones');
+btnPokemones.addEventListener('click', () => { //function Cargar Pokemones()
+  
+  //document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
+});*/ 
+
 
 
