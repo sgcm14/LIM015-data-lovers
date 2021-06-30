@@ -25,7 +25,7 @@ export const loadPokemon = (data) => {
   let print='';
   for (let i = 0; i < data.length; i++) {
     print += '<div class ="card">';
-    print += `<p> ${data[i].num}</p>`;
+    print += `<p># ${data[i].num}</p>`;
     print += `<h2> ${data[i].name}</h2>`;
     print += `<p>${data[i].stats['max-hp']} HP</p>`;        
     print += `<img src = ${data[i].img} />`;
@@ -47,7 +47,7 @@ export const searchPokemon = (data, namePokemon) => {
   for (let i = 0; i < data.length; i++) {
     if (data[i].name == namePokemon) {
       print += '<div class ="card">';
-      print += `<p> ${data[i].num}</p>`;
+      print += `<p># ${data[i].num}</p>`;
       print += `<h2> ${data[i].name}</h2>`;
       print += `<p>${data[i].stats['max-hp']} HP</p>`;        
       print += `<img src = ${data[i].img} />`;
@@ -62,7 +62,7 @@ export const searchPokemon = (data, namePokemon) => {
 };
 
 /* 
- * Fitrar Datos Tipo
+ * Fitrar Datos por Tipo
  */ 
 export const filterData = (data, condition) => {
 
@@ -71,7 +71,7 @@ export const filterData = (data, condition) => {
     for (let j = 0; j < data[i].type.length; j++) {             
       if (data[i].type[j] == condition) {    
         print += '<div class ="card">';
-        print += `<p> ${data[i].num}</p>`;
+        print += `<p># ${data[i].num}</p>`;
         print += `<h2> ${data[i].name}</h2>`;
         print += `<p>${data[i].stats['max-hp']} HP</p>`;        
         print += `<img src = ${data[i].img} />`;
@@ -86,6 +86,9 @@ export const filterData = (data, condition) => {
   
 };
 
+/* 
+ * Ordenar Datos por Nombre
+ */
 export const sortData = (data, sortBy, sortOrder) => {
   //sortBy='name';
   if(sortBy == 'name'){
@@ -103,7 +106,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       let print='';
       for (let i = 0; i < datosOrdenado.length; i++) {
         print += '<div class ="card">';
-        print += `<p> ${datosOrdenado[i].num}</p>`;
+        print += `<p># ${datosOrdenado[i].num}</p>`;
         print += `<h2> ${datosOrdenado[i].name}</h2>`;
         print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
         print += `<img src = ${datosOrdenado[i].img} />`;
@@ -129,7 +132,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       let print='';
       for (let i = 0; i < datosOrdenado.length; i++) {
         print += '<div class ="card">';
-        print += `<p> ${datosOrdenado[i].num}</p>`;
+        print += `<p># ${datosOrdenado[i].num}</p>`;
         print += `<h2> ${datosOrdenado[i].name}</h2>`;
         print += `<p>${datosOrdenado[i].stats['max-hp']} HP</p>`;        
         print += `<img src = ${datosOrdenado[i].img} />`;
@@ -143,6 +146,9 @@ export const sortData = (data, sortBy, sortOrder) => {
   }
 };
 
+/* 
+ * Calcular pokemon mas fuerte
+ */
 export const computeStats = (data, nameFirst, nameSecond) => {
 
   let suma1 ='';
@@ -156,7 +162,7 @@ export const computeStats = (data, nameFirst, nameSecond) => {
         parseInt(data[i].stats['max-hp']);  
         
       print1 += '<div class ="card">'; 
-      print1 += `<p> ${data[i].num}</p>`;   
+      print1 += `<p># ${data[i].num}</p>`;   
       print1 += `<h2> ${data[i].name}</h2>`;    
       print1 += `<p>${data[i].stats['max-hp']} HP</p>`;        
       print1 += `<img src = ${data[i].img} />`;
@@ -173,7 +179,7 @@ export const computeStats = (data, nameFirst, nameSecond) => {
           parseInt(data[i].stats['max-hp']);
           
       print2 += '<div class ="card">'; 
-      print2 += `<p> ${data[i].num}</p>`;   
+      print2 += `<p># ${data[i].num}</p>`;   
       print2 += `<h2> ${data[i].name}</h2>`;    
       print2 += `<p>${data[i].stats['max-hp']} HP</p>`;        
       print2 += `<img src = ${data[i].img} />`;
