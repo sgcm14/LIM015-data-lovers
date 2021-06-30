@@ -20,6 +20,13 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
 
 });
 
+/* 
+ * Cargar Pokemones
+ */ 
+const datos = data.pokemon;
+document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
+
+
 const btnFiltrar = document.getElementById('btnFiltrar');
 btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
   
@@ -31,6 +38,7 @@ btnFiltrar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
+  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 
 });
 
@@ -45,6 +53,7 @@ btnOrdenar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
+  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 
 });
 
@@ -59,6 +68,7 @@ btnPokemones.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'oculto';
   document.getElementById('btnCalcular').className = 'oculto';
   document.getElementById('tituloCalcular').className = 'oculto';
+  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 
 });
 
@@ -73,15 +83,11 @@ btnEstadistica.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('txtPoke2').className = 'desoculto';
   document.getElementById('btnCalcular').className = 'desoculto';
   document.getElementById('tituloCalcular').className = 'desoculto';
-
+  document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 
 });
 
-/* 
- * Cargar Pokemones
- */ 
-const datos = data.pokemon;
-document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
+
 
 /* 
  * Botón Cargar Pokemones

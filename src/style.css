@@ -5,7 +5,11 @@
 
 body{
     background-color: rgb(247, 80, 80);
+    font-family: 'Bitter', serif;
+    letter-spacing:2px;
+    
 }
+
 .botones{
     padding: 5px;
     border-radius: 5px;
@@ -65,18 +69,40 @@ header{
     margin: 10px auto;
     text-transform: capitalize;
 }
+nav{
+    text-align: center;
+    background-color: red;
+    padding: 10px;
+}
+.botonesNav{
+    color: white;
+    background-color: red;
+    border: 0px;
+}
 .elementos-container-inicio{
     text-align: center;
 }
-#txtBuscar{
-    margin: 20px;
-    width: 250px;
+.elementos-container-calcular{
+   text-align: center;
+   margin-top: 15px;
 }
+#txtBuscar{
+    /*margin: 20px;
+    width: 250px;*/
+    /* borrar toda la section abajo, descmentar lo de arriba*/
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 250px;
+    margin: 15px auto;
+}
+
 select{
     text-transform: capitalize;
     padding: 5px;
     border-radius: 5px;
     font-weight: 700;
+    margin: 15px auto;
 }
 #container-pokemon{
     width: 100%;
@@ -119,8 +145,47 @@ select{
     text-transform: capitalize;
 }
 
-
-/* menu */
+#btnBuscar{
+    /* borrar toda la section btnBuscar*/
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+#btnBuscar:hover{
+    /* borrar toda la section btnBuscar*/
+    opacity: 0.8;
+    cursor: pointer;
+}
+#btnCalcular{
+    /* borrar toda la section btnBuscar*/
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+#btnCalcular:hover{
+    /* borrar toda la section btnBuscar*/
+    opacity: 0.8;
+    cursor: pointer;
+}
+#txtPoke1{
+    /* borrar toda la section abajo*/
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 250px;
+    margin: 15px auto;
+}
+#txtPoke2{
+    /* borrar toda la section abajo*/
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 250px;
+    margin: 15px auto;
+}
+/* menu 
 .menu{
     list-style: none;
     background: yellow;
@@ -133,7 +198,7 @@ select{
 }
 .menu li a{
     padding: 20px;
-}
+}*/
 
 /*nav li ul{
     display:none ;
