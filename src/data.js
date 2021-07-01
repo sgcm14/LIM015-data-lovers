@@ -1,6 +1,6 @@
 /* 
  * Validar el nombre: si es correcto devuelve el nombre de usuario
- */ 
+ */
 export const validateName = (name) => {
   
   if(name.length === 0 || isNaN(name) == false) {
@@ -51,8 +51,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       const datosOrdenado = data.sort(function(prev, next){
         if(prev.name > next.name){
           return 1;
-        }
-        if(prev.name < next.name){
+        }else if(prev.name < next.name){
           return -1;
         }
         return 0;
@@ -67,8 +66,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       const datosOrdenado = data.sort(function(prev, next){
         if(prev.name > next.name){
           return -1;
-        }
-        if(prev.name < next.name){
+        }else if(prev.name < next.name){
           return 1;
         }
         return 0;
@@ -83,7 +81,7 @@ export const sortData = (data, sortBy, sortOrder) => {
 };
 
 /* 
- * Calcular pokemon mas fuerte
+ * Calcular Pokemon mas fuerte
  */
 export const computeStats = (data, nameFirst, nameSecond) => {
 
@@ -95,7 +93,7 @@ export const computeStats = (data, nameFirst, nameSecond) => {
     if (data[i].name == nameFirst) {
       suma1 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
         parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
-        parseInt(data[i].stats['max-hp']);        
+        parseInt(data[i].stats['max-hp']);
       poke1.push(data[i]);
     }  
 
@@ -116,8 +114,6 @@ export const computeStats = (data, nameFirst, nameSecond) => {
     console.log('el mayor es ' + suma2);    
     return poke2;
   }
-
-  
 };
 
 /* 

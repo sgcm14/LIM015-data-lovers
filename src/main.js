@@ -2,32 +2,7 @@ import { searchPokemon, filterData, validateName, sortData, computeStats } from 
 import data from './data/pokemon/pokemon.js';
 
 /* 
- *Template carga Pokemon
- */ 
-
-const datos = data.pokemon; // variable global(Manejo de la data)
-
-const loadPokemon = (listaPoke) => {
-  let templateList ='';
-  listaPoke.forEach((datos) => {
-   
-    const print = `<div class ="card">
-   <p># ${datos.num}</p>
-   <h2> ${datos.name}</h2>
-   <p>${datos.stats['max-hp']} HP</p>        
-   <img src = ${datos.img} />
-   <p> ${datos.type}</p>
-   <p>height: ${datos.size['height']}</p>
-   <p>weight: ${datos.size['weight']}</p>
-   </div>`;
-    templateList += print;    
-  });
-  document.getElementById('container-pokemon').innerHTML = templateList;
-};
-loadPokemon(datos);
-
-/* 
- *Esto hace que el cursor siempre esté en el input
+ * Esto hace que el cursor siempre esté en el input
  */ 
 document.getElementById('txtNombre').focus();
 
@@ -41,6 +16,37 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
   document.getElementById('inicio').className = 'oculto';
   document.getElementById('principal').className = 'desoculto';
 });
+
+/* 
+ * variable global(Manejo de la data)
+ */
+const datos = data.pokemon; 
+
+/* 
+ * Template carga Pokemon
+ */ 
+const loadPokemon = (listaPoke) => {
+  let templateList ='';
+  listaPoke.forEach((datos) => {
+   
+    const print = `<div class ="card">
+      <p># ${datos.num}</p>
+      <h2> ${datos.name}</h2>
+      <p>${datos.stats['max-hp']} HP</p>        
+      <img src = ${datos.img} />
+      <p> ${datos.type}</p>
+      <p>height: ${datos.size['height']}</p>
+      <p>weight: ${datos.size['weight']}</p>
+      </div>`;
+    templateList += print;    
+  });
+  document.getElementById('container-pokemon').innerHTML = templateList;
+};
+
+/* 
+ * llama a loadPokemon y le pasa la data a imprimir 
+ */
+loadPokemon(datos);
 
 /* 
  * Botón Filtar: Menu
@@ -118,98 +124,29 @@ btnBuscar.addEventListener('click', () => {
 
 /*
  * Select Filtar: Filtrar pokemones 
-*/
+ */
 const slcTipos = document.getElementById('slcTipos');
 slcTipos.addEventListener('change',  () => {
-  const tipo=document.getElementById('slcTipos').value;
-  let condicion = '';
-  switch (tipo) {
-  case 'grass':
-    condicion = 'grass';
-    break;
-  case 'poison':
-    condicion = 'poison';
-    break;
-  case 'fire':
-    condicion = 'fire';
-    break;
-  case 'flying':
-    condicion = 'flying';
-    break;
-  case 'bug':
-    condicion = 'bug';
-    break;
-  case 'normal':
-    condicion = 'normal';
-    break;
-  case 'ground':
-    condicion = 'ground';
-    break;
-  case 'fighting':
-    condicion = 'fighting';
-    break;
-  case 'electric':
-    condicion = 'electric';
-    break;
-  case 'water':
-    condicion = 'water';
-    break;
-  case 'psychic':
-    condicion = 'psychic';
-    break;
-  case 'rock':
-    condicion = 'rock';
-    break;  
-  case 'ice':
-    condicion = 'ice';
-    break;
-  case 'ghost':
-    condicion = 'ghost';
-    break;
-  case 'dragon':
-    condicion = 'dragon';
-    break;
-  case 'fairy':
-    condicion = 'fairy';
-    break;
-  case 'dark':
-    condicion = 'dark';
-    break;
-  case 'steel':
-    condicion = 'steel';
-    break;
-  default:
-    console.log('no eligio nada');
-    break;
-  }  
+  // condicion trae en el value el nombre del tipo:fire,water,etc
+  const condicion=document.getElementById('slcTipos').value;
   loadPokemon(filterData(datos, condicion));  
 });
 
 /*
  * Select Ordenar: Ordenar pokemones 
-*/
+ */
 const slcOrden = document.getElementById('slcOrden');
 slcOrden.addEventListener('change',  () => {
+  // Ordene por nombre
   const name = 'name';
-  const tipo=document.getElementById('slcOrden').value;
-  let condicion = '';
-  switch (tipo) {
-  case 'ascendente':
-    condicion = 'ascendente';
-    break;
-  case 'descendente':
-    condicion = 'descendente';
-    break;
-  default:
-    condicion = 'Elige opcion';
-    break;   
-  }    
+  // condicion trae en el value el nombre del tipo:ascendente, descendente
+  const condicion=document.getElementById('slcOrden').value;   
   loadPokemon(sortData(datos,name, condicion));
 });
 
 /*
  * Select Filtar: Filtrar pokemones 
-*/
+ */
 const btnCalcular = document.getElementById('btnCalcular');
 btnCalcular.addEventListener('click', () => {   
   const txtPoke1 = document.getElementById('txtPoke1').value;
@@ -285,6 +222,3 @@ btnPokemones.addEventListener('click', () => { //function Cargar Pokemones()
   
   //document.getElementById('container-pokemon').innerHTML = loadPokemon(datos);
 });*/ 
-
-
-
