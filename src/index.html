@@ -49,12 +49,10 @@
       </nav>
 
       <section id="container">
+
         <div class="elementos-container-inicio">
-         
           <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas" />
-          <button id="btnBuscar" class="botones">Buscar</button>
-          
-          
+          <button id="btnBuscar" class="botones">Buscar</button>          
         </div>
         <div class="elementos-container-filtrar">
           <select id="slcTipos" class="oculto">
@@ -89,17 +87,24 @@
         </div>
         <div class="elementos-container-calcular">
           <h2 id="tituloCalcular" class="oculto">Averigua que pokemón es más poderoso!!!</h2>
-            <input type="text" class="oculto"  id="txtPoke1" placeholder="Escribir nombre ...." />
-            <input type="text" class="oculto"  id="txtPoke2" placeholder="Escribir nombre ...." />
-            <button id="btnCalcular" class="oculto" >Calcular</button>
+          <input type="text" class="oculto"  id="txtPoke1" placeholder="Escribir nombre ...." />
+          <input type="text" class="oculto"  id="txtPoke2" placeholder="Escribir nombre ...." />
+          <button id="btnCalcular" class="oculto" >Calcular</button>
         </div>
-        <div id="container-pokemon"></div>
+        <div id="container-pokemon">
+        </div>
         
       </section>      
 
     </section>
 
-    <footer>Created by Sammy® & Bethzy® - 2021</footer>
+    <footer>
+      <script type="text/javascript">
+        copyright=new Date();
+        update=copyright.getFullYear();
+        document.write("© 2021 - " + update + " " + "Created by Sammy® & Bethzy®");
+      </script>
+    </footer>
     
     <script src="main.js" type="module"></script>
   </body>
