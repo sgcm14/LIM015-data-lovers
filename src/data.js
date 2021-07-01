@@ -19,10 +19,12 @@ export const searchPokemon = (data, namePokemon) => {
   for (let i = 0; i < data.length; i++) {
     if (data[i].name == namePokemon) {
       arrayPoke.push(data[i]); 
+      
     }   
   }
   //console.log(arrayPoke);
   return arrayPoke; 
+  
 };
 
 /* 
@@ -55,12 +57,17 @@ export const sortData = (data, sortBy, sortOrder) => {
           return -1;
         }
         return 0;
+        
       });
+      return datosOrdenado;
+      
+      
+      /*
       const arrayAsc=[];
       for (let i = 0; i < datosOrdenado.length; i++) {
         arrayAsc.push(datosOrdenado[i]);
       }
-      return arrayAsc;      
+      return arrayAsc;*/      
 
     } else  if(sortOrder == 'descendente'){
       const datosOrdenado = data.sort(function(prev, next){
@@ -71,11 +78,13 @@ export const sortData = (data, sortBy, sortOrder) => {
         }
         return 0;
       });
-      const arrayDesc=[];
+      /*const arrayDesc=[];
       for (let i = 0; i < datosOrdenado.length; i++) {
         arrayDesc.push(datosOrdenado[i]);
       }
-      return arrayDesc;
+      return arrayDesc;*/
+      return datosOrdenado;
+      
     }  
   }
 };
@@ -104,8 +113,8 @@ export const computeStats = (data, nameFirst, nameSecond) => {
       poke2.push(data[i]);  
     }  
   }
-  console.log(suma1);
-  console.log(suma2);
+  /*console.log(suma1);
+  console.log(suma2);*/
 
   if (suma1>suma2){
     console.log('el mayor es ' + suma1);    
