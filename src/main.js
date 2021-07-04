@@ -4,17 +4,17 @@ import data from './data/pokemon/pokemon.js';
 /* 
  * Esto hace que el cursor siempre esté en el input
  */ 
-document.getElementById('txtNombre').focus();
+document.querySelector('#txtNombre').focus();
 
 /* 
  * Botón Ingresar: Se ingresa un nombre de usuario
  */ 
-const btnIngresar = document.getElementById('btnIngresar');
+const btnIngresar = document.querySelector('#btnIngresar');
 btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
-  const txtNombre = document.getElementById('txtNombre').value;
-  document.getElementById('msjBienvenida').innerText = validateName(txtNombre);  
-  document.getElementById('inicio').className = 'oculto';
-  document.getElementById('principal').className = 'desoculto';
+  const txtNombre = document.querySelector('#txtNombre').value;
+  document.querySelector('#msjBienvenida').innerText = validateName(txtNombre);  
+  document.querySelector('#inicio').className = 'oculto';
+  document.querySelector('#principal').className = 'desoculto';
 });
 
 /* 
@@ -22,9 +22,166 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
  */
 const datos = data.pokemon; 
 
+
+/* 
+ * Template Carga Pokemon
+ */
+const loadPokemon = (listaPoke) => {
+  const container = document.querySelector('#container-pokemon');
+  container.innerHTML = ''; // para que limpie el container
+  //let templateList = '';
+  listaPoke.forEach((datos) => {
+    const card = document.createElement('div');
+    card.className ='card';
+    const print = `
+      <p># ${datos.num}</p>
+      <h2> ${datos.name}</h2>
+      <p>${datos.stats['max-hp']} HP</p>        
+      <img src = ${datos.img} />
+      <p> ${datos.type}</p>
+      <p>height: ${datos.size['height']}</p>
+      <p>weight: ${datos.size['weight']}</p>`;
+    //templateList += print;   
+    card.innerHTML=print;   
+    container.appendChild(card);
+    //templateList = '';
+  });
+  //document.querySelector('#container-pokemon').innerHTML = templateList;
+};  
+
+/*  
+ *  Template selects
+ */
+const loadSelect = (listaPoke) => {
+  let templateList ='';
+  listaPoke.forEach((datos) => {   
+    const print = `<option value="${datos.name}">${datos.name}</option>`;
+    templateList += print;    
+  });
+  document.querySelector('#slcPoke1').innerHTML = templateList;
+  document.querySelector('#slcPoke2').innerHTML = templateList;
+};
+
+/* 
+ * llama a loadSelect y le pasa la data a imprimir para selects
+ */
+loadSelect(datos);
+
+/* 
+ * llama a loadPokemon y le pasa la data a imprimir 
+ */
+loadPokemon(datos);
+
+/* 
+ * Botón Filtar: Menu
+ */
+const btnFiltrar = document.querySelector('#btnFiltrar');
+btnFiltrar.addEventListener('click', () => {   
+  document.querySelector('#txtBuscar').className = 'oculto';
+  document.querySelector('#btnBuscar').className = 'oculto';
+  document.querySelector('#slcOrden').className = 'oculto';
+  document.querySelector('#slcTipos').className = 'desoculto';
+  document.querySelector('#btnCalcular').className = 'oculto';
+  document.querySelector('#tituloCalcular').className = 'oculto';
+  document.querySelector('#slcPoke1').className = 'oculto';
+  document.querySelector('#slcPoke2').className = 'oculto';
+  loadPokemon(datos);
+});
+
+/* 
+ * Botón Ordenar: Menu
+ */
+const btnOrdenar = document.querySelector('#btnOrdenar');
+btnOrdenar.addEventListener('click', () => {    
+  document.querySelector('#txtBuscar').className = 'oculto';
+  document.querySelector('#btnBuscar').className = 'oculto';
+  document.querySelector('#slcOrden').className = 'desoculto';
+  document.querySelector('#slcTipos').className = 'oculto';
+  document.querySelector('#btnCalcular').className = 'oculto';
+  document.querySelector('#tituloCalcular').className = 'oculto';
+  document.querySelector('#slcPoke1').className = 'oculto';
+  document.querySelector('#slcPoke2').className = 'oculto';
+  loadPokemon(datos);
+});
+
+/* 
+ * Botón Inicio:  Menu
+ */
+const btnPokemones = document.querySelector('#btnPokemones');
+btnPokemones.addEventListener('click', () => {    
+  document.querySelector('#txtBuscar').className = 'desoculto';
+  document.querySelector('#btnBuscar').className = 'desoculto';
+  document.querySelector('#slcOrden').className = 'oculto';
+  document.querySelector('#slcTipos').className = 'oculto';
+  document.querySelector('#btnCalcular').className = 'oculto';
+  document.querySelector('#tituloCalcular').className = 'oculto';
+  document.querySelector('#slcPoke1').className = 'oculto';
+  document.querySelector('#slcPoke2').className = 'oculto';
+  loadPokemon(datos);
+});
+
+/* 
+ * Botón Estadistica:  Menu
+ */
+const btnEstadistica = document.querySelector('#btnEstadistica');
+btnEstadistica.addEventListener('click', () => {  
+  
+  document.querySelector('#txtBuscar').className = 'oculto';
+  document.querySelector('#btnBuscar').className = 'oculto';
+  document.querySelector('#slcOrden').className = 'oculto';
+  document.querySelector('#slcTipos').className = 'oculto';
+  document.querySelector('#btnCalcular').className = 'desoculto';
+  document.querySelector('#tituloCalcular').className = 'desoculto';
+  document.querySelector('#slcPoke1').className = 'desoculto';
+  document.querySelector('#slcPoke2').className = 'desoculto';
+  loadPokemon(datos);
+});
+
+/* 
+ * Botón Buscar: Se ingresa el nombre de un pokemón
+ */ 
+const btnBuscar = document.querySelector('#btnBuscar');
+btnBuscar.addEventListener('click', () => { 
+  const nombrePokemon = document.querySelector('#txtBuscar').value;    
+  loadPokemon(searchPokemon(datos, nombrePokemon));
+});
+
+/*
+ * Select Filtar: Filtrar pokemones 
+ */
+const slcTipos = document.querySelector('#slcTipos');
+slcTipos.addEventListener('change',  () => {
+  // condicion trae en el value el nombre del tipo:fire,water,etc
+  const condicion=document.querySelector('#slcTipos').value;
+  loadPokemon(filterData(datos, condicion));  
+});
+
+/*
+ * Select Ordenar: Ordenar pokemones 
+ */
+const slcOrden = document.querySelector('#slcOrden');
+slcOrden.addEventListener('change',  () => {
+  // Ordene por nombre
+  const name = 'name';
+  // condicion trae en el value el nombre del tipo:ascendente, descendente
+  const condicion=document.querySelector('#slcOrden').value;   
+  loadPokemon(sortData(datos,name, condicion));
+});
+
+/*
+ * Select Filtar: Filtrar pokemones 
+ */
+const btnCalcular = document.querySelector('#btnCalcular');
+btnCalcular.addEventListener('click', () => {   
+  const txtPoke1 = document.querySelector('#slcPoke1').value;
+  const txtPoke2 = document.querySelector('#slcPoke2').value; 
+  loadPokemon(computeStats(datos,txtPoke1, txtPoke2));   
+});
+
+
 /* 
  * Template carga Pokemon
- */ 
+
 const loadPokemon = (listaPoke) => {
   let templateList ='';
   listaPoke.forEach((datos) => {
@@ -40,120 +197,8 @@ const loadPokemon = (listaPoke) => {
       </div>`;
     templateList += print;    
   });
-  document.getElementById('container-pokemon').innerHTML = templateList;
-};
-
-/* 
- * llama a loadPokemon y le pasa la data a imprimir 
- */
-loadPokemon(datos);
-
-/* 
- * Botón Filtar: Menu
- */
-const btnFiltrar = document.getElementById('btnFiltrar');
-btnFiltrar.addEventListener('click', () => {   
-  document.getElementById('txtBuscar').className = 'oculto';
-  document.getElementById('btnBuscar').className = 'oculto';
-  document.getElementById('slcOrden').className = 'oculto';
-  document.getElementById('slcTipos').className = 'desoculto';
-  document.getElementById('txtPoke1').className = 'oculto';
-  document.getElementById('txtPoke2').className = 'oculto';
-  document.getElementById('btnCalcular').className = 'oculto';
-  document.getElementById('tituloCalcular').className = 'oculto';
-  loadPokemon(datos);
-});
-
-/* 
- * Botón Ordenar: Menu
- */
-const btnOrdenar = document.getElementById('btnOrdenar');
-btnOrdenar.addEventListener('click', () => {    
-  document.getElementById('txtBuscar').className = 'oculto';
-  document.getElementById('btnBuscar').className = 'oculto';
-  document.getElementById('slcOrden').className = 'desoculto';
-  document.getElementById('slcTipos').className = 'oculto';
-  document.getElementById('txtPoke1').className = 'oculto';
-  document.getElementById('txtPoke2').className = 'oculto';
-  document.getElementById('btnCalcular').className = 'oculto';
-  document.getElementById('tituloCalcular').className = 'oculto';
-  loadPokemon(datos);
-});
-
-/* 
- * Botón Inicio:  Menu
- */
-const btnPokemones = document.getElementById('btnPokemones');
-btnPokemones.addEventListener('click', () => {    
-  document.getElementById('txtBuscar').className = 'desoculto';
-  document.getElementById('btnBuscar').className = 'desoculto';
-  document.getElementById('slcOrden').className = 'oculto';
-  document.getElementById('slcTipos').className = 'oculto';
-  document.getElementById('txtPoke1').className = 'oculto';
-  document.getElementById('txtPoke2').className = 'oculto';
-  document.getElementById('btnCalcular').className = 'oculto';
-  document.getElementById('tituloCalcular').className = 'oculto';
-  loadPokemon(datos);
-});
-
-/* 
- * Botón Estadistica:  Menu
- */
-const btnEstadistica = document.getElementById('btnEstadistica');
-btnEstadistica.addEventListener('click', () => {  
-  
-  document.getElementById('txtBuscar').className = 'oculto';
-  document.getElementById('btnBuscar').className = 'oculto';
-  document.getElementById('slcOrden').className = 'oculto';
-  document.getElementById('slcTipos').className = 'oculto';
-  document.getElementById('txtPoke1').className = 'desoculto';
-  document.getElementById('txtPoke2').className = 'desoculto';
-  document.getElementById('btnCalcular').className = 'desoculto';
-  document.getElementById('tituloCalcular').className = 'desoculto';
-  loadPokemon(datos);
-});
-
-/* 
- * Botón Buscar: Se ingresa el nombre de un pokemón
- */ 
-const btnBuscar = document.getElementById('btnBuscar');
-btnBuscar.addEventListener('click', () => { 
-  const nombrePokemon = document.getElementById('txtBuscar').value;    
-  loadPokemon(searchPokemon(datos, nombrePokemon));
-});
-
-/*
- * Select Filtar: Filtrar pokemones 
- */
-const slcTipos = document.getElementById('slcTipos');
-slcTipos.addEventListener('change',  () => {
-  // condicion trae en el value el nombre del tipo:fire,water,etc
-  const condicion=document.getElementById('slcTipos').value;
-  loadPokemon(filterData(datos, condicion));  
-});
-
-/*
- * Select Ordenar: Ordenar pokemones 
- */
-const slcOrden = document.getElementById('slcOrden');
-slcOrden.addEventListener('change',  () => {
-  // Ordene por nombre
-  const name = 'name';
-  // condicion trae en el value el nombre del tipo:ascendente, descendente
-  const condicion=document.getElementById('slcOrden').value;   
-  loadPokemon(sortData(datos,name, condicion));
-});
-
-/*
- * Select Filtar: Filtrar pokemones 
- */
-const btnCalcular = document.getElementById('btnCalcular');
-btnCalcular.addEventListener('click', () => {   
-  const txtPoke1 = document.getElementById('txtPoke1').value;
-  const txtPoke2 = document.getElementById('txtPoke2').value; 
-  loadPokemon(computeStats(datos,txtPoke1, txtPoke2));   
-});
-
+  document.querySelector('#container-pokemon').innerHTML = templateList;
+}; */ 
 
 // const btnCalcular = document.getElementById('btnCalcular');
 // btnCalcular.addEventListener('click', () => { 

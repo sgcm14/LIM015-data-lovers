@@ -28,7 +28,7 @@ body{
 /* section: inicio */
 #inicio{
     opacity: 0.9;
-    background: white;
+    background: #f2f2f2;
     text-align: center;
     margin: 80px auto;
     border-radius: 10px;
@@ -50,7 +50,7 @@ h1{
 }
 #btnIngresar{
     background:red;
-    color: white;
+    color: #f2f2f2;
 }
 
 /* Para ocultar/desocultar los section: inicio y principal */
@@ -71,12 +71,12 @@ header{
 }
 nav{
     text-align: center;
-    background-color: red;
+    background-color: #000000;
     padding: 10px;
 }
 .botonesNav{
-    color: white;
-    background-color: red;
+    color: #f2f2f2;
+    background-color: #000000;
     border: 0px;
 }
 .elementos-container-inicio{
@@ -116,8 +116,9 @@ select{
 .card{
     width: 250px;
     height: 390px;
-    background: #4E5D6C;
-    color:#f2f2f2;
+    opacity: 0.9;
+    background: #f2f2f2;
+    color:black;
     border-radius: 8px;
     border:1px solid  red;
     box-shadow: 0 2px 2px rgba(0,0,0,0.2);
@@ -145,6 +146,12 @@ select{
     text-transform: capitalize;
 }
 
+footer{
+    text-align: center;
+    background-color: #000000;
+    color:#ffffff;
+    padding: 10px;
+}
 #btnBuscar{
     /* borrar toda la section btnBuscar*/
     padding: 5px;

@@ -1,8 +1,8 @@
 //import { example, anotherExample } from '../src/data.js';
 import { validateName, searchPokemon, filterData, sortData, computeStats} from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js'; //.. una carpeta arriba
 
-//import data from '../data/pokemon/pokemon.js';
-
+const datos = data.pokemon;
 
 describe('validateName', () => {
   it('should be an function', () => {
@@ -30,9 +30,9 @@ describe('searchPokemon', () => {
     expect(typeof searchPokemon('')).toBe('object');
   });  
   
-  /*it('Probando', () => {
-    expect(searchPokemon(data.pokemon, 'pikachu')).toEqual('pikachu');
-  });*/
+  it('Probando', () => {
+    expect(searchPokemon(datos, 'pikachu')).toEqual('pikachu'); //revisar
+  });
 
 });
 

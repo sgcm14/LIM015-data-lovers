@@ -29,23 +29,6 @@
         <button id="btnFiltrar" class="botones botonesNav">Filtrar</button>
         <button id="btnOrdenar" class="botones botonesNav">Ordenar</button>
         <button id="btnEstadistica" class="botones botonesNav">Estadística</button>
-        <!--<ul class="menu">
-            <li class="menu__item" id="cargar"><a href="#principal">Inicio</a></li>
-            <li class="menu__item"><a href="">Ordenar</a>
-                <ul>
-                    <li><a href="">Ascendente</a></li>
-                    <li><a href="">Descendente</a></li>
-                </ul>
-            </li>
-            <li class="menu__item"><a href="">Filtrar</a>
-                <ul>
-                    <li id="menuTipo"><a href="">Por tipo</a></li>                    
-                    <li id="slctRegion"><a href="">Region</a>                      
-                    </li>
-                </ul>
-            </li>
-            <li class="menu__item"><a href="">Estadisticas</a></li>
-        </ul> -->
       </nav>
 
       <section id="container">
@@ -56,7 +39,7 @@
         </div>
         <div class="elementos-container-filtrar">
           <select id="slcTipos" class="oculto">
-            <option disabled selected>Selecciona tipo de Pokemón</option>
+            <!--<option disabled selected>Selecciona tipo de Pokemón</option>-->
             <option value="grass">grass</option>
             <option value="poison">poison</option>
             <option value="fire">fire</option>
@@ -78,17 +61,16 @@
           </select>
         </div>
         <div class="elementos-container-ordenar">
-          <!--<button id="btnOrdenarA" class="botones oculto">Ascendente</button> cambiarlo al Ordenar -->
           <select id="slcOrden" class="oculto">
-            <option disabled selected>Selecciona orden de Pokemón</option>
+            <!--<option disabled selected>Seleccione orden alfabético</option> -->
             <option value="ascendente">ascendente</option>
             <option value="descendente">descendente</option>            
           </select>
         </div>
         <div class="elementos-container-calcular">
-          <h2 id="tituloCalcular" class="oculto">Averigua que pokemón es más poderoso!!!</h2>
-          <input type="text" class="oculto"  id="txtPoke1" placeholder="Escribir nombre ...." />
-          <input type="text" class="oculto"  id="txtPoke2" placeholder="Escribir nombre ...." />
+          <h2 id="tituloCalcular" class="oculto">Averigua que Pokemón es más poderoso!!!</h2>
+          <select id="slcPoke1" class="oculto"></select>
+          <select id="slcPoke2" class="oculto"></select>
           <button id="btnCalcular" class="oculto" >Calcular</button>
         </div>
         <div id="container-pokemon">
