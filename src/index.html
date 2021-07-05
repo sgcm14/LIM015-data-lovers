@@ -11,7 +11,7 @@
   </head>
   <body>    
     
-    <section id = "inicio" class="">
+    <section id = "inicio" class="containerInicio">
 
       <h1>POKEDEX INFO</h1>
       <img  src="imagenes/pokebola.png" id="img-inicio" /> 
@@ -25,10 +25,10 @@
 
       <header id ="msjBienvenida"></header>
       <nav class="main-nav">
-        <button id="btnPokemones" class="botones botonesNav">Inicio</button>
-        <button id="btnFiltrar" class="botones botonesNav">Filtrar</button>
-        <button id="btnOrdenar" class="botones botonesNav">Ordenar</button>
-        <button id="btnEstadistica" class="botones botonesNav">Estadística</button>
+        <button id="btnPokemones" class="botonesNav">Inicio</button>
+        <button id="btnFiltrar" class="botonesNav">Filtrar</button>
+        <button id="btnOrdenar" class="botonesNav">Ordenar</button>
+        <button id="btnEstadistica" class="botonesNav">Estadística</button>
       </nav>
 
       <section id="container">
@@ -37,8 +37,8 @@
           <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas" />
           <button id="btnBuscar" class="botones">Buscar</button>          
         </div>
-        <div class="elementos-container-filtrar">
-          <select id="slcTipos" class="oculto">
+        <div class="elementos-container-filtrar oculto">
+          <select id="slcTipos" ><!--class="oculto"-->
             <!--<option disabled selected>Selecciona tipo de Pokemón</option>-->
             <option value="grass">grass</option>
             <option value="poison">poison</option>
@@ -60,18 +60,18 @@
             <option value="steel">steel</option>
           </select>
         </div>
-        <div class="elementos-container-ordenar">
-          <select id="slcOrden" class="oculto">
+        <div class="elementos-container-ordenar oculto">
+          <select id="slcOrden"><!--class="oculto"-->
             <!--<option disabled selected>Seleccione orden alfabético</option> -->
             <option value="ascendente">ascendente</option>
             <option value="descendente">descendente</option>            
           </select>
         </div>
-        <div class="elementos-container-calcular">
-          <h2 id="tituloCalcular" class="oculto">Averigua que Pokemón es más poderoso!!!</h2>
-          <select id="slcPoke1" class="oculto"></select>
-          <select id="slcPoke2" class="oculto"></select>
-          <button id="btnCalcular" class="oculto" >Calcular</button>
+        <div class="elementos-container-calcular oculto">
+          <h2 id="tituloCalcular"><!--class="oculto"-->Averigua que Pokemón es más poderoso!!!</h2>
+          <select id="slcPoke1"><!--class="oculto"--></select>
+          <select id="slcPoke2"><!--class="oculto"--></select>
+          <button id="btnCalcular" class="botones"><!--class="oculto"-->Calcular</button>
         </div>
         <div id="container-pokemon">
         </div>
