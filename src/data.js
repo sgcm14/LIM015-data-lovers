@@ -47,10 +47,10 @@ export const filterData = (data, condition) => {
  * Ordenar Datos por Nombre
  */
 export const sortData = (data, sortBy, sortOrder) => {
-  //sortBy='name';
+  let datosOrdenado=[];
   if(sortBy == 'name'){
     if(sortOrder == 'ascendente'){
-      const datosOrdenado = data.sort(function(prev, next){
+      datosOrdenado = data.sort(function(prev, next){
         if(prev.name > next.name){
           return 1;
         }else if(prev.name < next.name){
@@ -59,7 +59,7 @@ export const sortData = (data, sortBy, sortOrder) => {
         return 0;
         
       });
-      return datosOrdenado;
+      //return datosOrdenado;
       
       
       /*
@@ -70,7 +70,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       return arrayAsc;*/      
 
     } else  if(sortOrder == 'descendente'){
-      const datosOrdenado = data.sort(function(prev, next){
+      datosOrdenado = data.sort(function(prev, next){
         if(prev.name > next.name){
           return -1;
         }else if(prev.name < next.name){
@@ -83,10 +83,11 @@ export const sortData = (data, sortBy, sortOrder) => {
         arrayDesc.push(datosOrdenado[i]);
       }
       return arrayDesc;*/
-      return datosOrdenado;
+      
       
     }  
   }
+  return datosOrdenado;
 };
 
 /* 
