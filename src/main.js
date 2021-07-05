@@ -13,7 +13,7 @@ const btnIngresar = document.querySelector('#btnIngresar');
 btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
   const txtNombre = document.querySelector('#txtNombre').value;
   document.querySelector('#msjBienvenida').innerText = validateName(txtNombre);  
-  document.querySelector('#inicio').className = 'oculto';
+  document.querySelector('#inicio').classList.add('oculto');
   document.querySelector('#principal').className = 'desoculto';
 });
 
@@ -34,13 +34,13 @@ const loadPokemon = (listaPoke) => {
     const card = document.createElement('div');
     card.className ='card';
     const print = `
-      <p># ${datos.num}</p>
+      <p class='propiedadNumPoke'># ${datos.num}</p>
+      <p class='propiedadNumPoke'>${datos.stats['max-hp']} HP</p><p class='heartPoke'>♥</p>  
       <h2> ${datos.name}</h2>
-      <p>${datos.stats['max-hp']} HP</p>        
       <img src = ${datos.img} />
-      <p> ${datos.type}</p>
-      <p>height: ${datos.size['height']}</p>
-      <p>weight: ${datos.size['weight']}</p>`;
+      <p class='propiedadTipoPoke'> ${datos.type}</p>
+      <p class='propiedadPoke'>height: ${datos.size['height']}</p>
+      <p class='propiedadPoke'>weight: ${datos.size['weight']}</p>`;
     //templateList += print;   
     card.innerHTML=print;   
     container.appendChild(card);
@@ -76,15 +76,16 @@ loadPokemon(datos);
  * Botón Filtar: Menu
  */
 const btnFiltrar = document.querySelector('#btnFiltrar');
-btnFiltrar.addEventListener('click', () => {   
-  document.querySelector('#txtBuscar').className = 'oculto';
-  document.querySelector('#btnBuscar').className = 'oculto';
-  document.querySelector('#slcOrden').className = 'oculto';
-  document.querySelector('#slcTipos').className = 'desoculto';
-  document.querySelector('#btnCalcular').className = 'oculto';
-  document.querySelector('#tituloCalcular').className = 'oculto';
-  document.querySelector('#slcPoke1').className = 'oculto';
-  document.querySelector('#slcPoke2').className = 'oculto';
+btnFiltrar.addEventListener('click', () => {
+  document.querySelector('.elementos-container-inicio').classList.remove('desoculto');
+  document.querySelector('.elementos-container-inicio').classList.add('oculto');
+  document.querySelector('.elementos-container-ordenar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-ordenar').classList.add('oculto');
+  document.querySelector('.elementos-container-filtrar').classList.remove('oculto');
+  document.querySelector('.elementos-container-filtrar').classList.add('desoculto');
+  document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
+  document.querySelector('.elementos-container-calcular').classList.add('oculto');
+
   loadPokemon(datos);
 });
 
@@ -92,15 +93,16 @@ btnFiltrar.addEventListener('click', () => {
  * Botón Ordenar: Menu
  */
 const btnOrdenar = document.querySelector('#btnOrdenar');
-btnOrdenar.addEventListener('click', () => {    
-  document.querySelector('#txtBuscar').className = 'oculto';
-  document.querySelector('#btnBuscar').className = 'oculto';
-  document.querySelector('#slcOrden').className = 'desoculto';
-  document.querySelector('#slcTipos').className = 'oculto';
-  document.querySelector('#btnCalcular').className = 'oculto';
-  document.querySelector('#tituloCalcular').className = 'oculto';
-  document.querySelector('#slcPoke1').className = 'oculto';
-  document.querySelector('#slcPoke2').className = 'oculto';
+btnOrdenar.addEventListener('click', () => {
+  document.querySelector('.elementos-container-inicio').classList.remove('desoculto');
+  document.querySelector('.elementos-container-inicio').classList.add('oculto');
+  document.querySelector('.elementos-container-ordenar').classList.remove('oculto');
+  document.querySelector('.elementos-container-ordenar').classList.add('desoculto');
+  document.querySelector('.elementos-container-filtrar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-filtrar').classList.add('oculto');
+  document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
+  document.querySelector('.elementos-container-calcular').classList.add('oculto');
+
   loadPokemon(datos);
 });
 
@@ -108,15 +110,16 @@ btnOrdenar.addEventListener('click', () => {
  * Botón Inicio:  Menu
  */
 const btnPokemones = document.querySelector('#btnPokemones');
-btnPokemones.addEventListener('click', () => {    
-  document.querySelector('#txtBuscar').className = 'desoculto';
-  document.querySelector('#btnBuscar').className = 'desoculto';
-  document.querySelector('#slcOrden').className = 'oculto';
-  document.querySelector('#slcTipos').className = 'oculto';
-  document.querySelector('#btnCalcular').className = 'oculto';
-  document.querySelector('#tituloCalcular').className = 'oculto';
-  document.querySelector('#slcPoke1').className = 'oculto';
-  document.querySelector('#slcPoke2').className = 'oculto';
+btnPokemones.addEventListener('click', () => {
+  document.querySelector('.elementos-container-inicio').classList.remove('oculto');
+  document.querySelector('.elementos-container-inicio').classList.add('desoculto');
+  document.querySelector('.elementos-container-ordenar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-ordenar').classList.add('oculto');
+  document.querySelector('.elementos-container-filtrar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-filtrar').classList.add('oculto');
+  document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
+  document.querySelector('.elementos-container-calcular').classList.add('oculto');
+
   loadPokemon(datos);
 });
 
@@ -125,15 +128,15 @@ btnPokemones.addEventListener('click', () => {
  */
 const btnEstadistica = document.querySelector('#btnEstadistica');
 btnEstadistica.addEventListener('click', () => {  
-  
-  document.querySelector('#txtBuscar').className = 'oculto';
-  document.querySelector('#btnBuscar').className = 'oculto';
-  document.querySelector('#slcOrden').className = 'oculto';
-  document.querySelector('#slcTipos').className = 'oculto';
-  document.querySelector('#btnCalcular').className = 'desoculto';
-  document.querySelector('#tituloCalcular').className = 'desoculto';
-  document.querySelector('#slcPoke1').className = 'desoculto';
-  document.querySelector('#slcPoke2').className = 'desoculto';
+  document.querySelector('.elementos-container-inicio').classList.remove('desoculto');
+  document.querySelector('.elementos-container-inicio').classList.add('oculto');
+  document.querySelector('.elementos-container-ordenar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-ordenar').classList.add('oculto');
+  document.querySelector('.elementos-container-filtrar').classList.remove('desoculto');
+  document.querySelector('.elementos-container-filtrar').classList.add('oculto');
+  document.querySelector('.elementos-container-calcular').classList.remove('oculto');
+  document.querySelector('.elementos-container-calcular').classList.add('desoculto');
+
   loadPokemon(datos);
 });
 

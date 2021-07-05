@@ -1,10 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 body{
-    background-color: rgb(247, 80, 80);
+    background-color: #FFF152;
     font-family: 'Bitter', serif;
     letter-spacing:2px;
     
@@ -14,6 +15,8 @@ body{
     padding: 5px;
     border-radius: 5px;
     font-weight: 700;
+    background:#E31203;
+    color: #f2f2f2;
 }
 .botones:hover{
     opacity: 0.8;
@@ -26,34 +29,31 @@ body{
 }
 
 /* section: inicio */
-#inicio{
+.containerInicio{
     opacity: 0.9;
     background: #f2f2f2;
     text-align: center;
-    margin: 80px auto;
+    margin: 38px auto;
     border-radius: 10px;
-    width: 50%;
+    width: 35%;
     padding: 30px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
 h1{
     font-size: 40px;
 }
-#img-inicio{
+.containerInicio img{
     width: 250px;
 }
-#msjPregunta{
+.containerInicio p{
     font-size: 25px;
 }
 #txtNombre{
     margin: 30px;
     text-transform: capitalize;
 }
-#btnIngresar{
-    background:red;
-    color: #f2f2f2;
-}
 
-/* Para ocultar/desocultar los section: inicio y principal */
+/* Para ocultar/desocultar los section/divs */
 .oculto {
     display: none;
 }
@@ -65,21 +65,45 @@ h1{
 /* section: principal */
 header{
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     margin: 10px auto;
     text-transform: capitalize;
+    color: black;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px black;
 }
 nav{
     text-align: center;
     background-color: #000000;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .botonesNav{
     color: #f2f2f2;
     background-color: #000000;
     border: 0px;
+    width: 280px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    flex-grow: 1;
+    border-color: #aaaaaa;
+   border-width: 1px;
+   border-style: dotted;
+}
+.botonesNav:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 .elementos-container-inicio{
+    text-align: center;
+}
+.elementos-container-ordenar{
+    text-align: center;
+}
+.elementos-container-filtrar{
     text-align: center;
 }
 .elementos-container-calcular{
@@ -87,14 +111,8 @@ nav{
    margin-top: 15px;
 }
 #txtBuscar{
-    /*margin: 20px;
-    width: 250px;*/
-    /* borrar toda la section abajo, descmentar lo de arriba*/
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 700;
+    margin: 20px;
     width: 250px;
-    margin: 15px auto;
 }
 
 select{
@@ -102,7 +120,7 @@ select{
     padding: 5px;
     border-radius: 5px;
     font-weight: 700;
-    margin: 15px auto;
+    margin: 15px;
 }
 #container-pokemon{
     width: 100%;
@@ -114,13 +132,12 @@ select{
     margin: auto;
 }
 .card{
-    width: 250px;
-    height: 390px;
+    width: 245px;
+    height: 260px;
     opacity: 0.9;
     background: #f2f2f2;
     color:black;
     border-radius: 8px;
-    border:1px solid  red;
     box-shadow: 0 2px 2px rgba(0,0,0,0.2);
     overflow: hidden;
     margin: 20px;
@@ -133,7 +150,7 @@ select{
     box-shadow: 0 12px 16px rgba(0,0,0,0.2);
 }
 .card img{
-    width: 200px;
+    width: 100px;
     cursor: pointer;
 }
 .card h2{
@@ -145,75 +162,35 @@ select{
     padding-top: 5px;
     text-transform: capitalize;
 }
+.heartPoke{
+    display: inline-block;
+    color: 	#E31203;
+    
+}
+.propiedadTipoPoke{
+    color: 	#E31203;
+    font-weight: 600;
+}
+.propiedadPoke{
+    font-size: 12px;
+    display: inline-block;
+    width: 30%;
+    font-weight: 600;
+}
+.propiedadNumPoke{
+    font-size: 15px;
+    display: inline-block;
+    width: 35%;
+    margin: auto 10px;
+}
 
 footer{
     text-align: center;
     background-color: #000000;
     color:#ffffff;
     padding: 10px;
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;*/
 }
-#btnBuscar{
-    /* borrar toda la section btnBuscar*/
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 700;
-    margin: 0 auto;
-}
-#btnBuscar:hover{
-    /* borrar toda la section btnBuscar*/
-    opacity: 0.8;
-    cursor: pointer;
-}
-#btnCalcular{
-    /* borrar toda la section btnBuscar*/
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 700;
-    margin: 0 auto;
-}
-#btnCalcular:hover{
-    /* borrar toda la section btnBuscar*/
-    opacity: 0.8;
-    cursor: pointer;
-}
-#txtPoke1{
-    /* borrar toda la section abajo*/
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 700;
-    width: 250px;
-    margin: 15px auto;
-}
-#txtPoke2{
-    /* borrar toda la section abajo*/
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 700;
-    width: 250px;
-    margin: 15px auto;
-}
-/* menu 
-.menu{
-    list-style: none;
-    background: yellow;
-    width: 90%;
-    margin: auto;
-}
-.menu li{
-    display: inline-block;
-    text-align: center;
-}
-.menu li a{
-    padding: 20px;
-}*/
-
-/*nav li ul{
-    display:none ;
-    position: absolute;
-    min-width: 140px;
-
-}*/
-
-/*nav li:hover > ul{
-    display: block;
-}*/
