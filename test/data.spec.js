@@ -1,4 +1,3 @@
-//import { example, anotherExample } from '../src/data.js';
 import { validateName, searchPokemon, filterData, sortData, computeStats} from '../src/data.js';
 //import data from '../src/data/pokemon/pokemon.js'; //.. una carpeta arriba
 
@@ -159,14 +158,3 @@ describe('computeStats', () => {
   });
 
 });
-
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
