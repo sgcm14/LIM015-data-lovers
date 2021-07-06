@@ -70,6 +70,36 @@ const outputComputeStats =
     stats: {['base-attack']: '151', ['base-defense']: '143', ['base-stamina']: '155', ['max-cp']: '1699','max-hp': '134'}},
 ];
 
+
+const inputSortAsc0 = 
+[
+  {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '005', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},
+  {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
+ 
+];
+
+const outputSortAsc0 = 
+[
+  {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '005', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},
+  {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
+ 
+];
+
+
+const outputSortDesc0 = 
+[   
+  {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
+  {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},  
+  {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '005', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  
+  
+];
+
 describe('validateName', () => {
   it('should be an function', () => {
     expect(typeof validateName).toBe('function');
@@ -136,6 +166,14 @@ describe('sortData', () => {
 
   it('should sort for descedente ', () => {
     expect(sortData(inputSortDesc, 'name', 'descendente')).toEqual(outputSortDesc);
+  });
+
+  it('should sort for ascedente prueba', () => {
+    expect(sortData(inputSortAsc0, 'name', 'ascendente')).toEqual(outputSortAsc0);
+  });
+
+  it('should sort for descedente prueba', () => {
+    expect(sortData(inputSortAsc0, 'name', 'descendente')).toEqual(outputSortDesc0);
   });
 
 });

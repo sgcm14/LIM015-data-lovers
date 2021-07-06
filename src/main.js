@@ -145,7 +145,7 @@ btnEstadistica.addEventListener('click', () => {
  */ 
 const btnBuscar = document.querySelector('#btnBuscar');
 btnBuscar.addEventListener('click', () => { 
-  const nombrePokemon = document.querySelector('#txtBuscar').value;    
+  const nombrePokemon = document.querySelector('#txtBuscar').value.toLowerCase();    
   loadPokemon(searchPokemon(datos, nombrePokemon));
 });
 
