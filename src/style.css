@@ -1,22 +1,25 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 
 body{
-    background-color: #FFF152;
+    /*background-color: rgb(255, 245, 157);*/
     font-family: 'Bitter', serif;
     letter-spacing:2px;
-    
+    background-image: url('./imagenes/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .botones{
-    padding: 5px;
+    padding: 8px 15px;
     border-radius: 5px;
     font-weight: 700;
     background:#E31203;
     color: #f2f2f2;
+    border: 0px;
 }
 .botones:hover{
     opacity: 0.8;
@@ -26,6 +29,7 @@ body{
     padding: 5px;
     border-radius: 5px;
     font-weight: 700;
+    border: 1px #000000 solid;
 }
 
 /* section: inicio */
@@ -75,7 +79,7 @@ header{
 nav{
     text-align: center;
     background-color: #000000;
-    padding: 10px;
+    /*padding: 10px;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -87,11 +91,11 @@ nav{
     width: 280px;
     height: 30px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
     flex-grow: 1;
     border-color: #aaaaaa;
-   border-width: 1px;
-   border-style: dotted;
+    border-width: 1px;
+    border-style: dotted;
 }
 .botonesNav:hover{
     opacity: 0.8;
@@ -121,6 +125,7 @@ select{
     border-radius: 5px;
     font-weight: 700;
     margin: 15px;
+    /*background-color: rgb(167, 157, 157);*/
 }
 #container-pokemon{
     width: 100%;
@@ -130,6 +135,10 @@ select{
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    /*display: grid;
+    gap: 1rem;
+    grid-auto-rows: 15 rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%,14rem),1fr));*/
 }
 .card{
     width: 245px;
