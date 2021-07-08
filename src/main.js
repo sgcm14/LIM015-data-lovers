@@ -1,5 +1,5 @@
 import { searchPokemon, filterData, validateName, sortData, computeStats } from './data.js';
-import data from './data/pokemon/pokemon.js';
+//import data from './data/pokemon/pokemon.js';
 
 /* 
  * Esto hace que el cursor siempre esté en el input
@@ -18,9 +18,25 @@ btnIngresar.addEventListener('click', () => {  //function ingresarNombre()
 });
 
 /* 
+ * Implementando el fetch
+ */ 
+let datos;
+
+fetch('data/pokemon/pokemon.json')
+  .then(response  => response .json())
+  .then(data => {
+    datos = data.pokemon;
+    //console.log(data.length);
+    //console.log(datos.length);
+    loadSelect(datos);    // llama a loadSelect y le pasa la data a imprimir para selects
+    loadPokemon(datos);   // llama a loadPokemon y le pasa la data a imprimir 
+
+  }).catch(error => console.log('hay error: '+ error));
+
+/* 
  * variable global(Manejo de la data)
  */
-const datos = data.pokemon; 
+//const datos = data.pokemon;
 
 
 /* 
@@ -65,12 +81,12 @@ const loadSelect = (listaPoke) => {
 /* 
  * llama a loadSelect y le pasa la data a imprimir para selects
  */
-loadSelect(datos);
+//loadSelect(datos);
 
 /* 
  * llama a loadPokemon y le pasa la data a imprimir 
  */
-loadPokemon(datos);
+//loadPokemon(datos);
 
 /* 
  * Botón Filtar: Menu
@@ -178,7 +194,8 @@ const btnCalcular = document.querySelector('#btnCalcular');
 btnCalcular.addEventListener('click', () => {   
   const txtPoke1 = document.querySelector('#slcPoke1').value;
   const txtPoke2 = document.querySelector('#slcPoke2').value; 
-  loadPokemon(computeStats(datos,txtPoke1, txtPoke2));   
+  loadPokemon(computeStats(datos,txtPoke1, txtPoke2));
+  //document.querySelector('#container-pokemon').innerHTML += '<p>PARA LA GRAFICA</p>';   
 });
 
 
