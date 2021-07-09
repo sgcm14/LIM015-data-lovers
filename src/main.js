@@ -30,6 +30,8 @@ fetch('data/pokemon/pokemon.json')
     //console.log(datos.length);
     loadSelect(datos);    // llama a loadSelect y le pasa la data a imprimir para selects
     loadPokemon(datos);   // llama a loadPokemon y le pasa la data a imprimir 
+    //manupilatGrafico();
+    
 
   }).catch(error => console.log('hay error: '+ error));
 
@@ -187,16 +189,78 @@ slcOrden.addEventListener('change',  () => {
   loadPokemon(sortData(datos,name, condicion));
 });
 
+
+
+/* 
+ * Datos del Select -Estadisticas Grafica
+ */
+const loadPokemonSelect = (Poke) => {
+  const arrayPoke = [];
+  Poke.forEach((datos) => {
+    const name = datos.name;
+    const ataque = parseInt(datos.stats['base-attack']);
+    const defensa = parseInt(datos.stats['base-defense']);
+    const stamina = parseInt(datos.stats['base-stamina']);
+    const cp = parseInt(datos.stats['max-cp']);
+    const hp = parseInt(datos.stats['max-hp']);
+    arrayPoke.push(name,ataque,defensa,stamina,cp,hp);
+  });
+  console.log(arrayPoke);  
+  return arrayPoke; 
+}; 
+
+/*GRAFICA
+function casosGrafica(grafica){
+  const txtPoke1 = document.querySelector('#slcPoke1').value;
+  const txtPoke2 = document.querySelector('#slcPoke2').value; 
+  const chart = new Chart(grafica,{  
+
+    type: 'bar',
+    data:{
+      labels: ['base-attack', 'base-defense', 'base-stamina', 'max-cp', 'max-hp'], // eje x  
+      
+      datasets:[
+        {
+          label: txtPoke1, //Leyenda
+          data: [10,20, 26, 27 , 30], //eje y    datos[i].stats['base-attack']       
+          backgroundColor: 'blue',  //rgb(66,134,244)                
+        },
+        {
+          label: txtPoke2,
+          data: [3,10, 20, 50, 40],
+          backgroundColor: 'orange',  // rgb(229,89,50)           
+          
+        }       
+      ]     
+    },
+  });
+}
+function manupilatGrafico(){
+
+  const container = document.querySelector('#container-pokemon');
+  const canvas ='<canvas id="grafica" width="400" height="300"></canvas>';  
+  container.innerHTML += canvas;
+
+  const grafica= document.querySelector('#grafica').getContext('2d');
+  casosGrafica(grafica);
+}
+//manupilatGrafico();*/
+
 /*
- * Select Filtar: Filtrar pokemones 
+ * Select pokemones: Estadisticas 
  */
 const btnCalcular = document.querySelector('#btnCalcular');
 btnCalcular.addEventListener('click', () => {   
   const txtPoke1 = document.querySelector('#slcPoke1').value;
   const txtPoke2 = document.querySelector('#slcPoke2').value; 
   loadPokemon(computeStats(datos,txtPoke1, txtPoke2));
+
+  loadPokemonSelect(searchPokemon(datos,txtPoke1));
+  loadPokemonSelect(searchPokemon(datos,txtPoke2));
+  //manupilatGrafico();
   //document.querySelector('#container-pokemon').innerHTML += '<p>PARA LA GRAFICA</p>';   
 });
+
 
 
 /* 
