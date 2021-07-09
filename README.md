@@ -5,12 +5,8 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+* [4. Criterios que cumple el  proyecto](#4-criterios-que-cumple-el-proyecto)
+* [5. Consideraciones técnicas](#5-consideraciones-técnicas)
 
 ***
 
@@ -26,61 +22,24 @@ grandes cantidades de datos se conviertan en **información** fácil de leer par
 los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
 hacerlo es creando _interfaces_ y _visualizaciones_.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
-
 ## 2. Resumen del proyecto
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+En este proyecto hemos **construido una _página web_ para visualizar un
+_conjunto (set) de datos_** que se adecúe a lo que el usuario necesita.
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+Esta permite permita **visualizar la data, filtrarla, ordenarla y hacer cálculo agregado** de Pokemones.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
-
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
-
-Estos son datos que te proponemos:
+Estos son los datos que contiene:
 
 * [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
+  En este set hay una lista con los 251 Pokémon de la región de Kanto
   y Johto, junto con sus respectivas estadísticas usadas en el juego
   [Pokémon GO](http://pokemongolive.com).
   - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
-
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
-
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
-
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](/src/data/athletes/README.md)
-
+  
 ## 3. Objetivos de aprendizaje
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+Los objetivos en general son los siguientes, de los cuáles utilicé los que están con ✓:
 
 ### HTML y CSS
 
@@ -131,65 +90,171 @@ usuario necesita.
 * [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 * [ ] Planear y ejecutar tests de usabilidad.
 
-## 4. Consideraciones generales
+## 4 . Criterios que cumple el  proyecto
 
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
+* [x] UI: Solicita ingresar el nombre del usuario.
+* [x] UI: Visualizar todos los pokemones en cards.
+* [x] UI: Buscar un pokemon por su nombre.
+* [x] UI: Filtrar los pokemones po su tipo.
+* [x] UI: Ordenar por nombre de forma ascendente.
+* [x] UI: Ordenar por nombre de forma descendente.
+* [x] UI: Calcular entre dos pokemones  el mas fuerte.
+* [x] UI: Es _responsive_.
+* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  lines y branches.
+* [x] Incluye un _plan de acción_ de tus objetivos de aprendizaje prioritizado en `README.md` (o otro archivo).
+* [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [x] Incluye historias de usuario en `README.md`.
+* [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+  `README.md`.
+* [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+  en `README.md`.
+* [x] Incluye el listado de problemas que detectaste a través de tests de
+  usabilidad en el `README.md`.
+* [x] Consumir la data dinamicamente con **Fetch**.
+* [ ] Visualizar grafica con **Chart.js**.
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+####¿Quiénes son los usuarios?
+Este proyecto va dirigido a los usuarios que son jugadores de Pokémon Go, pueden ser niños, adolescentes y/o adultos.
+
+####¿Cuáles son los objetivos en relación con el producto?
+El objetivo de este producto es que los usuarios puedan visualizar de manera dinámica todos los pokemones, para que sepan cuantos tienen y cuanto les falta. Además, poder saber sus características importantes de cada pokémon (tipo, tamaño, peso, nombre, debilidades, etc.) que los ayude a saber que pokemón tiene más probabilidades de ganar en un batalla pokemón, ya que con este producto podrá obtener la información necesaria.
+
+####¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
+Esta aplicación ayuda a los usuarios a poder **buscar por nombres** a los pokemones, **filtrarlos por tipo** y así saber cuántos pokemones de cada tipo tiene. Además, permite **ordenarlos por orden alfabético (A-Z y Z-A)** para poder ubicarlos fácilmente y elegir dos pokemones para **calcular** cuál es el más fuerte.
+Esto les facilita a los usuarios ya que tendrán toda la información en un solo lugar, siendo esta la guía perfecta para sus intereses, (Investigar, Jugar, Ocio, etc)
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+Estas son las historias de usuario:
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/HU.jpg)
 
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+En este boceto, se planteo el esquema de ingreso de usuario.
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protBaja1.jpg)
+> Prototipo de Login - Baja Fidelidad
+
+En este boceto, se planteo el esquema de la interfaz principal al ingresar a la web.
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protBaja2.jpg)
+> Prototipo de interfaz Principal - Baja Fidelidad
+
+#### Prototipo de alta fidelidad
+
+En este boceto, se planteo el esquema de ingreso de usuario.
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta1.jpg)
+> Prototipo de Login - Alta Fidelidad
+
+En este boceto, se planteo el esquema de la interfaz principal al ingresar a la web.
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta2.jpg)
+> Prototipo de interfaz Principal - Alta Fidelidad
+
+En este boceto, se planteo el esquema fildrado por tipo de Pokemon
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta3.jpg)
+> Prototipo Filtrado
+
+En este boceto, se planteo el esquema de orderna los pokemones por nombre (Ascendente - Descendente)
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta4.jpg)
+> Prototipo Ordenar (Asc-Desc)
+
+En este boceto, se planteo el esquema para calacuar que pokemon es mas fuerte
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta5.jpg)
+> Prototipo Estadisticas
+
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Por cada funcionalidad terminada se enviaba el link a usuarios para que nos den feedback del producto, asi saber que mejorar.
+Al gunos comentarios recibidos fueron:
+- "Al buscar el pokemon desde mi celular no lo encuentro"(La solucion fue         que al escribir el nombre del pokemon ignore las mayusculas).
+- "Los colores no eran amigables"(La solucion fue buscar colores agradables).
+- "El en celular se veia pequeño"(La solucion fue adaptar la web para celular).
+- "Para calcular que pokemon es mas fuerte tengo que escribir el nombre y no recuerdo como se escribe el nombre del pokemon"(La solucion fue hacer listas desplegables con lso nombres de los pokemones).
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+Acontinuacion de muestra el funcionamiento de la pagina:
 
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
+Ingreso a la web: Por defecto el cursor ya estara en "Escribir Nombre"
 
-Como mínimo, tu implementación debe:
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img1.jpg)
+>Pantalla de **Login**
 
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
+El usuario escribe su nombre y le da click en el boton **Ingresar**:
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img2.jpg)
+> Pantalla de **Login**
+
+El usuario ingresa a la web, se muestra su nombre y todo el contenido:
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img3.jpg)
+> Pantalla de **Inicio**
+
+Al poner el cursor sobre alguna card del pokemon este tiene un comportamientoo diferente(se eleva).
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img4.jpg)
+> Pantalla de **Inicio** - Card
+
+El usuario escribe el nombre del pokemon a buscar, sin importar minusculas o mayusculas
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img5.jpg)
+> Pantalla de **Inicio** - Buscar
+
+El usuario da click en **Buscar** y se muestra el pokemon
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img6.jpg)
+> Pantalla de **Inicio** - Buscar
+
+El usuario selecciona el opcion **Filtrar** y se muestra la lista de opciones
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img7.jpg)
+> Pantalla de **Filtrar**
+
+El usuario selecciona que tipo de pokemon desea filtrar
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img8.jpg)
+> Pantalla de **Filtrar**
+
+Se muestra el resultado de la opcion escogida
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img9.jpg)
+> Pantalla de **Filtrar**
+
+El usuario selecciona el opcion **Ordenar** y se muestra la lista de opciones
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img10.jpg)
+> Pantalla de **Ordenar**
+
+El usuario selecciona como desea ordenarlo (Ascendente / Descendente):
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img11.jpg)
+> Pantalla de **Ordenar**
+
+Se muestra el resultado de la opcion escogida:
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img12.jpg)
+> Pantalla de **Ordenar**
+
+El usuario selecciona el opcion **Estadistica**, se muestra la lista de opciones de los dos pokemones y elige.
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img13.jpg)
+> Pantalla de **Estadistica**
+
+Se presiona el boton **calcular** y se muestra el pokemon mas poderoso:
+
+![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img14.jpg)
+> Pantalla de **Estadistica**
 
 ### Pruebas unitarias
 
@@ -202,25 +267,7 @@ Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
 (_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
 en la sección de [Consideraciones técnicas](#srcdatajs).
 
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-Features/características extra sugeridas:
-
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
-  de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
-  [Chart.js](https://www.chartjs.org/)
-  o [Google Charts](https://developers.google.com/chart/).
-* 100% Coverage
-
-## 7. Consideraciones técnicas
+## 5. Consideraciones técnicas
 
 La lógica del proyecto debe estar implementada completamente en JavaScript
 (ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
@@ -229,42 +276,6 @@ con la excepción de librerías para hacer gráficas (charts); ver
 [_Parte opcional_](#6-hacker-edition) más arriba.
 
 No se debe utilizar la _pseudo-variable_ `this`.
-
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias:
-
-```text
-.
-├── EXTRA.md
-├── README.md
-├── package.json
-├── src
-|  ├── data (según con qué data trabajes)
-|  |  ├── lol
-|  |  |  ├── lol.js
-|  |  |  ├── lol.json
-|  |  |  └── README.md
-|  |  ├── pokemon
-|  |  |  ├── pokemon.js
-|  |  |  ├── pokemon.json
-|  |  |  └── README.md
-|  |  └── rickandmorty
-|  |     ├── rickandmorty.js
-|  |     └── rickandmorty.json
-|  |     └── README.md
-|  |  └── athletes
-|  |     ├── athletes.js
-|  |     └── athletes.json
-|  |     └── README.md
-|  ├── data.js
-|  ├── index.html
-|  ├── main.js
-|  └── style.css
-└── test
-   └── data.spec.js
-
-directory: 6 file: 17
-```
 
 ### `src/index.html`
 
@@ -346,109 +357,3 @@ asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_A
 Tendrás también que completar las pruebas unitarias de las funciones
 implementadas en el archivo `data.js`.
 
-## 8. Pistas, tips y lecturas complementarias
-
-### Primeros pasos
-
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
-pueden ayudar:
-
-* ¿Quiénes son los principales usuarios de producto?
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-* ¿Cuándo utilizan o utilizarían el producto?
-* Toda tu investigación previa debe tener como resultado todas las Historias
-  de Usuario de tu proyecto.
-* No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
-  solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
-  pistas en la guía de organización para el proyecto.
-
-Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
-
-1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,
-   tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
-   en ese repo. La otra integrante del equipo deber hacer un fork **del
-   repositorio de su compañera** y
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
-   hacia el mismo.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu *fork* a tu computadora (copia local).
-3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
-   asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
-4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
-6. A codear se ha dicho! :rocket:
-
-### Contenido de referencia
-
-#### Diseño de experiencia de usuario (User Experience Design)
-
-* Investigación con usuarios / entrevistas
-* Principios de diseño visual
-
-#### Desarrollo Front-end
-
-* Unidad de testing en curso de JavaScript en LMS.
-* Unidad de arreglos en curso de JavaScript en LMS.
-* Unidad de objetos en curso de JavaScript en LMS.
-* Unidad de funciones en curso de JavaScript en LMS.
-* Unidad de DOM en curso de Browser JavaScript en LMS.
-* [Array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
-* [Array.sort en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort)
-* [Array.map en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map)
-* [Array.filter en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter)
-* [Array.reduce en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce)
-* [Array.forEach en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)
-* [Object.keys en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/keys)
-* [Object.entries en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/entries)
-* [Fetch API en MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [json.org](https://json.org/json-es.html)
-* [expressions-vs-statements](https://2ality.com/2012/09/expressions-vs-statements.html)
-* [expresión vs sentencia](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
-* [datos atómicos vs datos estructurados](https://www.todojs.com/tipos-datos-javascript-es6/)
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-
-#### Herramientas
-
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
-* [Node.js](https://nodejs.org/)
-* [Jest](https://jestjs.io/)
-
-#### Organización del Trabajo
-
-* [Historias de Usuario](https://www.youtube.com/watch?v=ky6wFiF5vMk&t=344s).
-  Ojo que Cris no diferencia _Definición de terminado_ de _Criterios de
-  Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
-* [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
-* [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
-
-## 9. Checklist
-
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [ ] Incluye un _plan de acción_ de tus objetivos de aprendizaje prioritizado en `README.md` (o otro archivo).
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
