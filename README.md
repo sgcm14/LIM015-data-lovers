@@ -5,7 +5,7 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Criterios que cumple el  proyecto](#4-criterios-que-cumple-el-proyecto)
+* [4. Criterios que cumple el proyecto](#4-criterios-que-cumple-el-proyecto)
 * [5. Consideraciones técnicas](#5-consideraciones-técnicas)
 
 ***
@@ -117,12 +117,15 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 ### Definición del producto
 
 ####¿Quiénes son los usuarios?
+
 Este proyecto va dirigido a los usuarios que son jugadores de Pokémon Go, pueden ser niños, adolescentes y/o adultos.
 
 ####¿Cuáles son los objetivos en relación con el producto?
+
 El objetivo de este producto es que los usuarios puedan visualizar de manera dinámica todos los pokemones, para que sepan cuantos tienen y cuanto les falta. Además, poder saber sus características importantes de cada pokémon (tipo, tamaño, peso, nombre, debilidades, etc.) que los ayude a saber que pokemón tiene más probabilidades de ganar en un batalla pokemón, ya que con este producto podrá obtener la información necesaria.
 
 ####¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
+
 Esta aplicación ayuda a los usuarios a poder **buscar por nombres** a los pokemones, **filtrarlos por tipo** y así saber cuántos pokemones de cada tipo tiene. Además, permite **ordenarlos por orden alfabético (A-Z y Z-A)** para poder ubicarlos fácilmente y elegir dos pokemones para **calcular** cuál es el más fuerte.
 Esto les facilita a los usuarios ya que tendrán toda la información en un solo lugar, siendo esta la guía perfecta para sus intereses, (Investigar, Jugar, Ocio, etc)
 
