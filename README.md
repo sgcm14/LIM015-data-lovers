@@ -90,7 +90,7 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 * [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 * [ ] Planear y ejecutar tests de usabilidad.
 
-## 4 . Criterios que cumple el  proyecto
+## 4 . Criterios que cumple el proyecto
 
 * [x] UI: Solicita ingresar el nombre del usuario.
 * [x] UI: Visualizar todos los pokemones en cards.
@@ -112,19 +112,19 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 * [x] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [x] Consumir la data dinamicamente con **Fetch**.
-* [ ] Visualizar grafica con **Chart.js**.
+* [x] Visualizar grafica con **Chart.js**.
 
 ### Definición del producto
 
-####¿Quiénes son los usuarios?
+#### ¿Quiénes son los usuarios?
 
 Este proyecto va dirigido a los usuarios que son jugadores de Pokémon Go, pueden ser niños, adolescentes y/o adultos.
 
-####¿Cuáles son los objetivos en relación con el producto?
+#### ¿Cuáles son los objetivos en relación con el producto?
 
 El objetivo de este producto es que los usuarios puedan visualizar de manera dinámica todos los pokemones, para que sepan cuantos tienen y cuanto les falta. Además, poder saber sus características importantes de cada pokémon (tipo, tamaño, peso, nombre, debilidades, etc.) que los ayude a saber que pokemón tiene más probabilidades de ganar en un batalla pokemón, ya que con este producto podrá obtener la información necesaria.
 
-####¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
+#### ¿Cómo el producto soluciona los problemas/necesidades de dichos usuarios?
 
 Esta aplicación ayuda a los usuarios a poder **buscar por nombres** a los pokemones, **filtrarlos por tipo** y así saber cuántos pokemones de cada tipo tiene. Además, permite **ordenarlos por orden alfabético (A-Z y Z-A)** para poder ubicarlos fácilmente y elegir dos pokemones para **calcular** cuál es el más fuerte.
 Esto les facilita a los usuarios ya que tendrán toda la información en un solo lugar, siendo esta la guía perfecta para sus intereses, (Investigar, Jugar, Ocio, etc)

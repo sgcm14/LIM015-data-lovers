@@ -2,20 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--para responsive-->
     <title>Data Lovers</title>
-    <link rel="shortcut icon" href="imagenes/pokebola.png">
+    <link rel="shortcut icon" href="imagenes/pokebola.png"> <!--icono-->
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fuente de Google-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
-
-    
-
   </head>
   <body>    
     
-    <section id = "inicio" class="containerInicio">
+    <section id = "inicio" class="containerInicio"> <!--Pantalla de Login-->
 
       <h1>POKEDEX INFO</h1>
       <img  src="imagenes/pokebola.png" id="img-inicio" /> 
@@ -25,24 +22,24 @@
 
     </section> 
 
-    <section id ="principal" class="oculto">
+    <section id ="principal" class="oculto">  <!--Pantalla Principal-->
 
-      <header id ="msjBienvenida"></header>
-      <nav class="main-nav">
+      <header id ="msjBienvenida"></header>   <!--Bienvenida Usuario-->
+      <nav class="main-nav">    <!--Menú-->
         <button id="btnPokemones" class="botonesNav">Inicio</button>
         <button id="btnFiltrar" class="botonesNav">Filtrar</button>
         <button id="btnOrdenar" class="botonesNav">Ordenar</button>
         <button id="btnEstadistica" class="botonesNav">Estadística</button>
       </nav>
 
-      <section id="container">
+      <section id="container">  <!--Cuerpo que contiene submenús y pokemones-->
 
-        <div class="elementos-container-inicio">
+        <div class="elementos-container-inicio">  <!--Submenú para Búsqueda-->
           <input type="text" id="txtBuscar" placeholder="Escriba nombre del Pokemon..." class="cajas" />
           <button id="btnBuscar" class="botones">Buscar</button>          
         </div>
-        <div class="elementos-container-filtrar oculto">
-          <select id="slcTipos" ><!--class="oculto"-->
+        <div class="elementos-container-filtrar oculto">  <!--Submenú para Filtrar-->
+          <select id="slcTipos" >
             <!--<option disabled selected>Selecciona tipo de Pokemón</option>-->
             <option value="grass">grass</option>
             <option value="poison">poison</option>
@@ -64,37 +61,35 @@
             <option value="steel">steel</option>
           </select>
         </div>
-        <div class="elementos-container-ordenar oculto">
-          <select id="slcOrden"><!--class="oculto"-->
+        <div class="elementos-container-ordenar oculto">  <!--Submenú para Ordenar-->
+          <select id="slcOrden">
             <!--<option disabled selected>Seleccione orden alfabético</option> -->
             <option value="ascendente">ascendente</option>
             <option value="descendente">descendente</option>            
           </select>
         </div>
-        <div class="elementos-container-calcular oculto">
-          <h2 id="tituloCalcular"><!--class="oculto"-->Averigua que Pokemón es más poderoso!!!</h2>
-          <select id="slcPoke1"><!--class="oculto"--></select>
-          <select id="slcPoke2"><!--class="oculto"--></select>
-          <button id="btnCalcular" class="botones"><!--class="oculto"-->Calcular</button>
+        <div class="elementos-container-calcular oculto"> <!--Submenú para Calcular-->
+          <h2 id="tituloCalcular">Averigua que Pokemón es más poderoso!!!</h2>
+          <select id="slcPoke1"></select>
+          <select id="slcPoke2"></select>
+          <button id="btnCalcular" class="botones">Calcular</button>
         </div>
-        <div id="container-pokemon">
-        </div>
-        <!--<canvas id="grafica" width="400" height="300"></canvas> -->       
+        <div id="container-pokemon">  <!--Mostrará los pokemones-->
+        </div>      
       </section>   
 
     </section>
 
-    <footer>
+    <footer>  <!--Pie de Página-->
       <script type="text/javascript">
         copyright=new Date();
-        update=copyright.getFullYear();
+        update=copyright.getFullYear(); // Aqui actualizará el 2do año dinamicamente
         document.write("© 2021 - " + update + " " + "Created by Sammy® & Bethzy®");
       </script>
-
     </footer>
     
     <script src="main.js" type="module"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>  <!--Para Charts.js-->
    
   </body>
 </html>

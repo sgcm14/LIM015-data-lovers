@@ -2,39 +2,33 @@
  * Validar el nombre: si es correcto devuelve el nombre de usuario
  */
 export const validateName = (name) => {
-  
   if(name.length === 0 || isNaN(name) == false) {
-    throw new TypeError('Por favor ingresa tu nombre correctamente');
+    throw new TypeError('Por favor ingresa tu nombre correctamente'); // lanzar una excepción
     //document.getElementById('txtNombre').focus();
   }
-  return `¡ Bienvenid@ Maestr@ Pokemon ${name} !`;
+  return `¡ Bienvenid@ Maestr@ Pokemon ${name} !`; // Mensaje de Bienvenida
 };
 
 /* 
  * Buscar Pokemon por nombre
  */ 
 export const searchPokemon = (data, namePokemon) => {
-  
   const arrayPoke = [];
   for (let i = 0; i < data.length; i++) {
     if (data[i].name == namePokemon) {
       arrayPoke.push(data[i]); 
-      
     }   
   }
-  //console.log(arrayPoke);
   return arrayPoke; 
-  
 };
 
 /* 
  * Fitrar Datos por Tipo
  */ 
 export const filterData = (data, condition) => {
-
   const arrayFilter=[];
   for (let i = 0; i < data.length; i++) {
-    for (let j = 0; j < data[i].type.length; j++) {             
+    for (let j = 0; j < data[i].type.length; j++) {           
       if (data[i].type[j] == condition) {    
         arrayFilter.push(data[i]);
       }      
@@ -57,18 +51,7 @@ export const sortData = (data, sortBy, sortOrder) => {
           return -1;
         }
         return 0;
-        
       });
-      //return datosOrdenado;
-      
-      
-      /*
-      const arrayAsc=[];
-      for (let i = 0; i < datosOrdenado.length; i++) {
-        arrayAsc.push(datosOrdenado[i]);
-      }
-      return arrayAsc;*/      
-
     } else  if(sortOrder == 'descendente'){
       datosOrdenado = data.sort(function(prev, next){
         if(prev.name > next.name){
@@ -78,13 +61,6 @@ export const sortData = (data, sortBy, sortOrder) => {
         }
         return 0;
       });
-      /*const arrayDesc=[];
-      for (let i = 0; i < datosOrdenado.length; i++) {
-        arrayDesc.push(datosOrdenado[i]);
-      }
-      return arrayDesc;*/
-      
-      
     }  
   }
   return datosOrdenado;
@@ -94,7 +70,6 @@ export const sortData = (data, sortBy, sortOrder) => {
  * Calcular Pokemon mas fuerte
  */
 export const computeStats = (data, nameFirst, nameSecond) => {
-
   let suma1 ='';
   let suma2 ='';
   const poke1=[];
@@ -103,29 +78,23 @@ export const computeStats = (data, nameFirst, nameSecond) => {
     if (data[i].name == nameFirst) {
       suma1 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
         parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
-        parseInt(data[i].stats['max-hp']);
-      poke1.push(data[i]);
-    }  
-
+        parseInt(data[i].stats['max-hp']);  //suma sus stats
+      poke1.push(data[i]);  // Guarda la todo la data del pokemon1
+    }
     if (data[i].name == nameSecond) {
       suma2 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
           parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
-          parseInt(data[i].stats['max-hp']);          
-      poke2.push(data[i]);  
+          parseInt(data[i].stats['max-hp']);  //suma sus stats          
+      poke2.push(data[i]);  // Guarda la todo la data del pokemon2
     }  
   }
-  /*console.log(suma1);
-  console.log(suma2);*/
-
-  if (suma1>suma2){
-    console.log('el mayor es ' + suma1);    
-    return poke1;
+  if (suma1>suma2){ 
+    return poke1; // Si la suma de stats del (pokemon1 > pokemon2) -> mas poderoso (pokemon1)
   }else {
-    console.log('el mayor es ' + suma2);    
-    return poke2;
+    return poke2; // Si la suma de stats del (pokemon2 > pokemon1) -> mas poderoso (pokemon2)
   }
 };
-
+/************************************************************************************************************/
 /* 
  * Cargar Pokemones
   
