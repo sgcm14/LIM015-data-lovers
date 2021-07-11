@@ -1,4 +1,9 @@
-# Data Lovers
+# Data Lovers (Laboratoria)
+
+- Este proyecto se realizó siguiendo estas consideraciones [El Proyecto](https://github.com/Laboratoria/LIM015-data-lovers) , lo desarrollé dentro del segundo mes en [Laboratoria - Sede Lima](https://www.laboratoria.la/)
+
+- **Periodo :** 16 Junio - 12 Julio, 2021
+> En este proyecto se usó HTML, CSS y JS (Charts.js para el gráfico)
 
 ## Índice
 
@@ -131,7 +136,7 @@ Esto les facilita a los usuarios ya que tendrán toda la información en un solo
 
 Estas son las historias de usuario:
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/HU.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/HU.jpg)
 
 ### Diseño de la Interfaz de Usuario
 
@@ -139,39 +144,39 @@ Estas son las historias de usuario:
 
 En este boceto, se planteo el esquema de ingreso de usuario.
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protBaja1.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protBaja1.jpg)
 > Prototipo de Login - Baja Fidelidad
 
 En este boceto, se planteo el esquema de la interfaz principal al ingresar a la web.
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protBaja2.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protBaja2.jpg)
 > Prototipo de interfaz Principal - Baja Fidelidad
 
 #### Prototipo de alta fidelidad
 
 En este boceto, se planteo el esquema de ingreso de usuario.
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta1.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protAlta1.jpg)
 > Prototipo de Login - Alta Fidelidad
 
 En este boceto, se planteo el esquema de la interfaz principal al ingresar a la web.
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta2.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protAlta2.jpg)
 > Prototipo de interfaz Principal - Alta Fidelidad
 
 En este boceto, se planteo el esquema fildrado por tipo de Pokemon
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta3.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protAlta3.jpg)
 > Prototipo Filtrado
 
 En este boceto, se planteo el esquema de orderna los pokemones por nombre (Ascendente - Descendente)
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta4.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protAlta4.jpg)
 > Prototipo Ordenar (Asc-Desc)
 
 En este boceto, se planteo el esquema para calacuar que pokemon es mas fuerte
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/protAlta5.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/protAlta5.jpg)
 > Prototipo Estadisticas
 
 
@@ -189,72 +194,72 @@ Acontinuacion de muestra el funcionamiento de la pagina:
 
 Ingreso a la web: Por defecto el cursor ya estara en "Escribir Nombre"
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img1.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img1.jpg)
 >Pantalla de **Login**
 
 El usuario escribe su nombre y le da click en el boton **Ingresar**:
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img2.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img2.jpg)
 > Pantalla de **Login**
 
 El usuario ingresa a la web, se muestra su nombre y todo el contenido:
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img3.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img3.jpg)
 > Pantalla de **Inicio**
 
 Al poner el cursor sobre alguna card del pokemon este tiene un comportamientoo diferente(se eleva).
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img4.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img4.jpg)
 > Pantalla de **Inicio** - Card
 
 El usuario escribe el nombre del pokemon a buscar, sin importar minusculas o mayusculas
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img5.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img5.jpg)
 > Pantalla de **Inicio** - Buscar
 
 El usuario da click en **Buscar** y se muestra el pokemon
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img6.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img6.jpg)
 > Pantalla de **Inicio** - Buscar
 
 El usuario selecciona el opcion **Filtrar** y se muestra la lista de opciones
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img7.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img7.jpg)
 > Pantalla de **Filtrar**
 
 El usuario selecciona que tipo de pokemon desea filtrar
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img8.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img8.jpg)
 > Pantalla de **Filtrar**
 
 Se muestra el resultado de la opcion escogida
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img9.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img9.jpg)
 > Pantalla de **Filtrar**
 
 El usuario selecciona el opcion **Ordenar** y se muestra la lista de opciones
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img10.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img10.jpg)
 > Pantalla de **Ordenar**
 
 El usuario selecciona como desea ordenarlo (Ascendente / Descendente):
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img11.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img11.jpg)
 > Pantalla de **Ordenar**
 
 Se muestra el resultado de la opcion escogida:
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img12.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img12.jpg)
 > Pantalla de **Ordenar**
 
 El usuario selecciona el opcion **Estadistica**, se muestra la lista de opciones de los dos pokemones y elige.
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img13.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img13.jpg)
 > Pantalla de **Estadistica**
 
 Se presiona el boton **calcular** y se muestra el pokemon mas poderoso:
 
-![](https://raw.githubusercontent.com/BethzyOrtega/LIM015-data-lovers/main/src/imagenes/img14.jpg)
+![](https://raw.githubusercontent.com/sgcm14/LIM015-data-lovers/main/src/imagenes/img14.jpg)
 > Pantalla de **Estadistica**
 
 ### Pruebas unitarias
