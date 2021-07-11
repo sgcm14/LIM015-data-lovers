@@ -39,7 +39,7 @@ select{
     margin: 15px;
 }
 
-/******************************************section: inicio*****************************************************/
+/* *****************************************section: inicio*****************************************************/
 .containerInicio{
     opacity: 0.9;
     background: #f2f2f2;
@@ -60,11 +60,11 @@ h1{ /* POKEDEX INFO */
     padding: 0 5px;     
 }
 
-.containerInicio img{ /* POKEBOLA */
+.containerInicio > img{ /* POKEBOLA */
     width: 55%;
     margin: 2px 0;
 }
-.containerInicio p{ /* Hola, ¿Cuál es tu nombre? */
+.containerInicio > p{ /* Hola, ¿Cuál es tu nombre? */
     font-size: 20px;
     margin: 15px 0;
 }
@@ -74,7 +74,7 @@ h1{ /* POKEDEX INFO */
     width: 120%;
 }
 
-/***************************Para ocultar/desocultar los section/divs*********************************************/
+/* **************************Para ocultar/desocultar los section/divs*********************************************/
 .oculto {
     display: none;
 }
@@ -82,7 +82,7 @@ h1{ /* POKEDEX INFO */
     display: block;
 }
 
-/*****************************************section: principal***************************************************/
+/* ****************************************section: principal***************************************************/
 header{
     text-align: center;
     font-size: 30px;
@@ -93,7 +93,7 @@ header{
     -webkit-text-stroke: 1px black;
 }
 
-/****************************************************Menu***************************************************/
+/* ***************************************************Menu***************************************************/
 nav{ 
     text-align: center;
     background-color: #000000;   
@@ -110,7 +110,7 @@ nav{
     height: 30px;
     font-weight: 700;
     font-size: 20px;
-    flex-grow: 1;   /*espacio restante dentro del contenedor flexible*/
+    flex-grow: 1;   /* espacio restante dentro del contenedor flexible*/
     border-color: #aaaaaa;
     border-width: 1px;
     border-style: dotted; /* lineas punteadas*/
@@ -121,7 +121,7 @@ nav{
     cursor: pointer;
 }
 
-/****************************************************SubMenu***************************************************/
+/* ***************************************************SubMenu***************************************************/
 .elementos-container-inicio{
     text-align: center; /* Input y Boton Buscar */
 }
@@ -136,13 +136,13 @@ nav{
    margin-top: 15px;
 }
 
-/****************************************************INICIO***************************************************/
+/* ***************************************************INICIO***************************************************/
 #txtBuscar{
     margin: 20px;
     width: 250px;
 }
 
-/****************************************************POKEMONES***************************************************/
+/* ***************************************************POKEMONES***************************************************/
 #container-pokemon{
     width: 100%;
     max-width: 1200px;
@@ -172,16 +172,16 @@ nav{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0,0,0,0.2);
 }
-.card img{
+.card > img{
     width: 100px;
     cursor: pointer;
 }
-.card h2{   /* nombre del pokemon */
+.card > h2{   /* nombre del pokemon */
     text-transform: uppercase; /* mayusculas */
     font-weight: 600;
     padding: 5px;
 }
-.card p{ /* todos los datos del pokemon general */
+.card > p{ /* todos los datos del pokemon general */
     padding-top: 5px;
     text-transform: capitalize;
 }
@@ -207,7 +207,7 @@ nav{
     margin: auto 10px;
 }
 
-/****************************************************FOOTER***************************************************/
+/* ***************************************************FOOTER***************************************************/
 footer{
     text-align: center;
     background-color: #000000;

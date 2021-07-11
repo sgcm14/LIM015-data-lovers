@@ -49,14 +49,14 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 ### HTML y CSS
 
 * [x] Uso de HTML semántico.
-* [ ] [Uso de selectores de CSS.](https://css-tricks.com/almanac/selectors/)
+* [x] Uso de selectores de CSS. (hover | child | id | class | universal)
 * [x] Construir tu aplicación respetando el diseño realizado (maquetación).
 * [x] Uso de flexbox en CSS.
 
 ### DOM y Web APIs
 
-* [ ] [Uso de selectores del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Localizando_elementos_DOM_usando_selectores).
-* [ ] [Manejo de eventos del DOM.](https://www.w3schools.com/js/js_events.asp)
+* [x] Uso de selectores del DOM](querySelector)
+* [x] Manejo de eventos del DOM.
 * [x] Manipulación dinámica del DOM.(appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
@@ -67,8 +67,8 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 * [x] Manipular arrays (filter | map | sort | reduce)
 * [x] Manipular objects (key | value)
 * [x] Uso ES modules (`import`| `export`)
-* [ ] [Diferenciar entre expression y statements.](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
-* [ ] [Diferenciar entre tipos de datos atómicos y estructurados.](https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures)
+* [x] Diferenciar entre expression y statements.
+* [x] Diferenciar entre tipos de datos atómicos y estructurados.
 
 ### Testing
 
