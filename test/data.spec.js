@@ -2,17 +2,6 @@ import { validateName, searchPokemon, filterData, sortData, computeStats} from '
 //import data from '../src/data/pokemon/pokemon.js'; //.. una carpeta arriba
 //const datos = data.pokemon;
 
-/****************Data para searchPokemon, FilterData****************************/
-const input = 
-[
-  {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
-  {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},
-  {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
-  {num: '004', name: 'charmander', type: ['fire' ]},
-  {num: '005', name: 'charmeleon', type: [ 'fire' ]},
-  {num: '114', name: 'tangela', type: [ 'grass']},
-];
-
 /****************************Test ValidateName**********************************/
 describe('validateName', () => {
   it('should be an function', () => {
@@ -30,10 +19,22 @@ describe('validateName', () => {
   }); 
 });
 
+/****************Data para searchPokemon, FilterData****************************/
+const input = 
+[
+  {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
+  {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},
+  {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
+  {num: '004', name: 'charmander', type: ['fire' ]},
+  {num: '005', name: 'charmeleon', type: [ 'fire' ]},
+  {num: '114', name: 'tangela', type: [ 'grass']},
+];
+
 /****************************Test searchPokemon**********************************/
 describe('searchPokemon', () => {
 
-  const outputSearch = [
+  const outputSearch = 
+  [
     {num: '005', name: 'charmeleon', type: [ 'fire' ]},
   ];
 
@@ -53,7 +54,8 @@ describe('searchPokemon', () => {
 /****************************Test filterData**********************************/
 describe('filterData', () => {
 
-  const outputFilter = [
+  const outputFilter = 
+  [
     {num: '001', name: 'bulbasaur', type: [ 'grass', 'poison' ]},
     {num: '002', name: 'ivysaur', type: [ 'grass', 'poison' ]},
     {num: '003', name: 'venusaur', type: [ 'grass', 'poison' ]},
@@ -122,11 +124,11 @@ describe('sortData', () => {
     expect(typeof sortData('')).toBe('object');
   }); 
   
-  it('should sort for ascedente', () => {
+  it('should sort for ascending', () => {
     expect(sortData(inputSortAsc, 'name', 'ascendente')).toEqual(outputSortAsc);
   });
 
-  it('should sort for descedente ', () => {
+  it('should sort for descending ', () => {
     expect(sortData(inputSortDesc, 'name', 'descendente')).toEqual(outputSortDesc);
   });
   
