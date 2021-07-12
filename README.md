@@ -51,7 +51,7 @@ Los objetivos en general son los siguientes, de los cuáles utilicé los que est
 ### HTML y CSS
 
 * [x] Uso de HTML semántico.
-* [x] Uso de selectores de CSS. (hover | child | id | class | universal)
+* [x] Uso de selectores de CSS. (child | id | class | universal)
 * [x] Construir tu aplicación respetando el diseño realizado (maquetación).
 * [x] Uso de flexbox en CSS.
 

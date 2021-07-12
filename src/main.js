@@ -38,7 +38,7 @@ fetch('data/pokemon/pokemon.json')
 
 /* ************************************************TEMPLATES**********************************************************/
 /*
- * Template Carga Pokemon (Cards) - función en forma de declaración
+ * Template Carga Pokemon (Cards)
  */
 const loadPokemon = (listaPoke) => {  // Recibe un arreglo con los datos de un/unos pokemon
   const container = document.querySelector('#container-pokemon');
@@ -64,7 +64,7 @@ const loadPokemon = (listaPoke) => {  // Recibe un arreglo con los datos de un/u
 };
 
 /*
- *  Template selects  (Selects de Estadistica) - función en forma de declaración
+ *  Template selects  (Selects de Estadistica)
  */
 const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los pokemones
   let templateList = '<option value="selecciona" disabled selected>Selecciona Pokemón</option>';
@@ -271,7 +271,7 @@ btnCalcular.addEventListener('click', () => {
   const txtPoke1 = document.querySelector('#slcPoke1').value; // Nombre Pokemon 1
   const txtPoke2 = document.querySelector('#slcPoke2').value; // Nombre Pokemon 2
   loadPokemon(computeStats(datos,txtPoke1, txtPoke2)); // Card Pokemon mas poderoso
-  const dataPoke1 = loadPokemonSelect(searchPokemon(datos,txtPoke1)); // Stats Pokemon 1 - función en forma de expresión
-  const dataPoke2 = loadPokemonSelect(searchPokemon(datos,txtPoke2)); // Stats Pokemon 2 - función en forma de expresión
+  const dataPoke1 = loadPokemonSelect(searchPokemon(datos,txtPoke1)); // Stats Pokemon 1
+  const dataPoke2 = loadPokemonSelect(searchPokemon(datos,txtPoke2)); // Stats Pokemon 2
   manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2);  // Paso datos
 });
