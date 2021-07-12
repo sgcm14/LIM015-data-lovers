@@ -9,7 +9,7 @@
     "ecmaVersion": 2018,  /* Establece la versión de ECMAScript que se usará */
     "sourceType": "module"  /* Indica si se usan módulos ESM o solo scripts */
   },
-  "extends": ["eslint:recommended"], /* Reglas marcadas con ✓ en eslint.org/docs/rules/ ,"chartjs" */
+  "extends": ["eslint:recommended"], /* Reglas marcadas con ✓ en eslint.org/docs/rules/  */
   "rules": {
     "no-console": "warn", /* advierte que no deberias usar console */
     "import/extensions": "off", /* deshabilita la regla de import/extensions */

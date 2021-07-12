@@ -27,6 +27,8 @@ grandes cantidades de datos se conviertan en **información** fácil de leer par
 los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
 hacerlo es creando _interfaces_ y _visualizaciones_.
 
+![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+
 ## 2. Resumen del proyecto
 
 En este proyecto hemos **construido una _página web_ para visualizar un
@@ -190,7 +192,7 @@ Al gunos comentarios recibidos fueron:
 - "Para calcular que pokemon es mas fuerte tengo que escribir el nombre y no recuerdo como se escribe el nombre del pokemon"(La solucion fue hacer listas desplegables con lso nombres de los pokemones).
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
-Acontinuacion de muestra el funcionamiento de la pagina:
+A continuacion de muestra el funcionamiento de la pagina:
 
 Ingreso a la web: Por defecto el cursor ya estara en "Escribir Nombre"
 
@@ -271,7 +273,7 @@ _filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
 
 ## 5. Consideraciones técnicas
 
-La lógica del proyecto debe esta implementada completamente en JavaScript
+La lógica del proyecto esta implementada completamente en JavaScript
 (ES6), HTML y CSS. En este proyecto NO se ha usado librerías o
 frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
 con la excepción de librerías para hacer gráficas (charts).
