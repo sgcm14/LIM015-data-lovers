@@ -26,7 +26,7 @@ export const searchPokemon = (data, namePokemon) => {
  * Fitrar Datos por Tipo
  */
 export const filterData = (data, condition) => {
-  const arrayFilter = [];
+/*const arrayFilter = [];
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < data[i].type.length; j++) {
       if (data[i].type[j] === condition) {
@@ -34,7 +34,13 @@ export const filterData = (data, condition) => {
       }
     }
   }
-  return arrayFilter;
+  return arrayFilter;*/
+  const pokeFiltrado = (pokemones) =>{
+    if(pokemones.type[0] == condition || pokemones.type[1] === condition){
+      return true;
+    }
+  };
+  return data.filter(pokeFiltrado);
 };
 
 /*
