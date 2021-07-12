@@ -102,10 +102,6 @@ btnFiltrar.addEventListener('click', () => {
   document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
   document.querySelector('.elementos-container-calcular').classList.add('oculto');
   document.querySelector('#slcTipos').value = 'selecciona'; // Volver a mostrar "Selecciona tipo de Pokemón"
-  document.querySelector('#slcOrden').value = 'selecciona'; // Volver a mostrar "Seleccione orden alfabético"
-  document.querySelector('#slcPoke1').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#slcPoke2').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#txtBuscar').value = ''; // Limpia (#txtBuscar)
 
   loadPokemon(datos);  // Volver a mostrar a todos los pokemones
 });
@@ -123,11 +119,7 @@ btnOrdenar.addEventListener('click', () => {
   document.querySelector('.elementos-container-filtrar').classList.add('oculto');
   document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
   document.querySelector('.elementos-container-calcular').classList.add('oculto');
-  document.querySelector('#slcTipos').value = 'selecciona'; // Volver a mostrar "Selecciona tipo de Pokemón"
   document.querySelector('#slcOrden').value = 'selecciona'; // Volver a mostrar "Seleccione orden alfabético"
-  document.querySelector('#slcPoke1').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#slcPoke2').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#txtBuscar').value = ''; // Limpia (#txtBuscar)
 
   loadPokemon(datos);  // Volver a mostrar a todos los pokemones
 });
@@ -145,10 +137,6 @@ btnPokemones.addEventListener('click', () => {
   document.querySelector('.elementos-container-filtrar').classList.add('oculto');
   document.querySelector('.elementos-container-calcular').classList.remove('desoculto');
   document.querySelector('.elementos-container-calcular').classList.add('oculto');
-  document.querySelector('#slcTipos').value = 'selecciona'; // Volver a mostrar "Selecciona tipo de Pokemón"
-  document.querySelector('#slcOrden').value = 'selecciona'; // Volver a mostrar "Seleccione orden alfabético"
-  document.querySelector('#slcPoke1').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#slcPoke2').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
   document.querySelector('#txtBuscar').value = ''; // Limpia (#txtBuscar)
 
   loadPokemon(datos);  // Volver a mostrar a todos los pokemones
@@ -167,11 +155,8 @@ btnEstadistica.addEventListener('click', () => {
   document.querySelector('.elementos-container-filtrar').classList.add('oculto');
   document.querySelector('.elementos-container-calcular').classList.remove('oculto');
   document.querySelector('.elementos-container-calcular').classList.add('desoculto'); // mostrar este submenu
-  document.querySelector('#slcTipos').value = 'selecciona'; // Volver a mostrar "Selecciona tipo de Pokemón"
-  document.querySelector('#slcOrden').value = 'selecciona'; // Volver a mostrar "Seleccione orden alfabético"
   document.querySelector('#slcPoke1').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
   document.querySelector('#slcPoke2').value = 'selecciona'; // Volver a mostrar "Selecciona Pokemón"
-  document.querySelector('#txtBuscar').value = ''; // Limpia (#txtBuscar)
 
   loadPokemon(datos);  // Volver a mostrar a todos los pokemones
 });
